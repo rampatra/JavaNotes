@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-baseurl: "/java-concepts/" # the subpath of your site, e.g. /blog/
+baseurl: "/java-concepts" # the subpath of your site, e.g. /blog/
 url: "https://ramswaroop.github.io/" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
@@ -11,7 +11,7 @@ theme:
   description: "A website with blog posts and pages" # used by search engines
 
   # Header and footer text
-  header_text: >
+#  header_text: >
 #     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 #
 #     <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
