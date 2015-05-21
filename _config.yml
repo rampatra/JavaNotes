@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
-baseurl: "/java-concepts" # the subpath of your site, e.g. /blog/
-url: "https://ramswaroop.github.io/" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://java.ramswaroop.me/" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
 theme:
