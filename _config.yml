@@ -24,7 +24,7 @@ theme:
   rss: true
   email_address: "ram@compzets.com" # Full email address, e.g. "sam@example.com"
   behance:
-  bitbucket: "ramswarooppatra"
+  bitbucket:
   dribbble:
   facebook: "ramswaroop"
   flickr:
@@ -43,8 +43,8 @@ theme:
   youtube:
 
   # Scripts
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname:
+  google_analytics: "UA-46465113-1" # Tracking ID, e.g. "UA-000000-01"
+  disqus_shortname: ""
   katex: true # Enable if using math markup
 
   # Localization strings
