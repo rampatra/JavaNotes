@@ -44,7 +44,7 @@ theme:
 
   # Scripts
   google_analytics: "UA-46465113-1" # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname: ""
+  disqus_shortname: "javaconceptscomments"
   katex: true # Enable if using math markup
 
   # Localization strings
