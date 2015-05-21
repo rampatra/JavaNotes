@@ -22,7 +22,7 @@ theme:
 
   # Icons
   rss: true
-  email_address: "ram@compzets.com" # Full email address, e.g. "sam@example.com"
+  email_address: # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
