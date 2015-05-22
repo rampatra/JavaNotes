@@ -78,3 +78,5 @@ final              |       final             |   final
                    |                         |    strictfp
                    |                         |    native
 
+{% include responsive_ad.html %}
+
