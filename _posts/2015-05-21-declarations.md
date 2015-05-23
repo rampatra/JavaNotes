@@ -3,6 +3,63 @@ layout: post
 title: Declarations
 ---
 
+### Class
+
+* There can be __only one public class__ per source code file.
+* If there is a public class in a file, the name of the file must match the name of the public class.
+* Files with no public classes can have a name that does not match any of the classes in the file.
+* A file can have __more than one nonpublic class__.
+
+
+### Interface
+
+* All __interface methods are implicitly `public` and `abstract`__. In other words, you do not need to actually type
+the `public` or `abstract` modifiers in the method declaration, but the method is still always `public` and `abstract`.
+* All __variables defined in an interface are implicitly `public`, `static`, and `final`__, in other words, interfaces can
+declare only constants, not instance variables.
+* Interface methods must not be `static`, `final`, `strictfp`, or `native`.
+
+#### Some valid interface declarations:
+
+{% highlight java %}
+
+public abstract interface Rollable { } // abstract is redundant as
+                                       // interfaces are implicitly abstract
+
+public interface Rollable { } // public modifier is required if you
+                              // want the interface to have public
+                              // rather than default access
+
+interface Rollable { } // interface with default access
+
+public interface Bounceable {
+
+    // following initializations/declarations are all
+    // legal and identical
+
+    int b = 8;
+    public static final int b = 8;
+    public final int b = 8;
+    static final int b = 8;
+    final int b = 8;
+
+    void bounce();
+    public void bounce();
+    abstract void bounce();
+    public abstract void bounce();
+    abstract public void bounce();
+
+}
+
+{% endhighlight %}
+
+
+_NOTE: The above points state that interfaces have very little flexibility in how the methods and variables
+defined in the interface are declared. This is also one of the **rare differences between an interface and an
+abstract class**._
+
+
+
 ### Var-args
 
 Use var-args when you want to pass __variable number of arguments__ to a method.
@@ -25,6 +82,7 @@ Let's look at some legal and illegal var-arg declarations:
                                             // (only one is allowed)
     void doStuff6(String... s, byte b) { }  // var-arg must be last
 {% endhighlight %}
+
 
 ### Enums
 
@@ -171,6 +229,14 @@ enum CoffeeSize {
 }
 
 {% endhighlight %}
+
+
+__Some points to note:__
+
+* You can NEVER invoke an enum constructor directly. The enum constructor
+  is invoked automatically, with the arguments you define after the constant value.
+* Every enum has a static method, values(), that returns an array of the enum's
+  values in the order they're declared.
 
 
 {% include responsive_ad.html %}

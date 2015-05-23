@@ -64,17 +64,28 @@ From any non-subclass class outside the package   |  Yes     |  No              
 public Record getRecord(int fileNumber, final int recordNumber) {}
 {% endhighlight %}
 
-A method can never, ever, ever be marked as both **abstract and final, or both abstract and private**.
+**Final** when applied to a method prevents it to be overridden and when applied to a class makes it un-inheritable
+i.e, it can never be subclassed (no class can extend it).
+
+An **abstract method** is a method that's been declared (as abstract) but not implemented. In other words, the method
+contains no functional code. And the class which contains at least one of such methods is an **abstract class** and has to
+be declared abstract. An abstract class can **never be instantiated**.
+
+A method can never, ever, ever be marked as **both abstract and final, or both abstract and private or both abstract
+and static**.
+
+A class having even a single abstract method has to be declared **abstract** or if it extends an abstract class then
+it must implement all abstract methods of the superclass otherwise you have make it abstract as well.
 
 #### Comparison of modifiers on variables vs. methods:
 
 Local Variables    |  Non-local Variables    | Methods
 ------------------ | ----------------------- | --------
-final              |       final             |   final
-                   |      public             |   public
+    final          |       final             |    final
+                   |       public            |    public
                    |       protected         |    protected
                    |       private           |    private
-                   |       static            |   static
+                   |       static            |    static
                    |       transient         |    abstract
                    |       volatile          |    synchronized
                    |                         |    strictfp
