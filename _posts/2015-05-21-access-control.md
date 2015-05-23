@@ -30,7 +30,7 @@ public class Parent {
     protected int x = 9; // protected access
 }
 
-package other;
+package other; // different package
 import certification.Parent;
 class Child extends Parent {
     public void testIt() {
@@ -43,6 +43,8 @@ class Child extends Parent {
     }
 }
 {% endhighlight %}
+
+_NOTE: If `Child` class would have been in the same package as `Parent` then there would be no compiler error._
 
 #### The below table gives the picture of all access modifiers:
 
