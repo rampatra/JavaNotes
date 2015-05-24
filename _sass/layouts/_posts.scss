@@ -47,3 +47,12 @@ header {
     @extend %padding-regular;
   }
 }
+
+.share-bar {
+  text-align: center;
+  display: none;
+  border: 1px solid $border-color;
+  padding: 15px 20px 8px;
+  vertical-align: top;
+  margin: 20px 0;
+}
