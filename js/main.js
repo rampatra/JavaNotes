@@ -33,7 +33,7 @@ for (var i = 0; i < share_bar.length; i++) {
 
         '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=217347368312341&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
 
-        '<script src="https://apis.google.com/js/plusone.js" async></script> <g:plusone href="' + encodeURIComponent(window.location) + '" size="medium"></g:plusone>';
+        '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;url=' + encodeURIComponent(window.location) + '" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:105px; height:28px;"></iframe>';
 
     share_bar[i].innerHTML = html;
     share_bar[i].style.display = 'inline-block';
