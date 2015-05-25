@@ -48,6 +48,7 @@ header {
   }
 }
 
+/** Custom **/
 .share-bar {
   text-align: center;
   display: none;
@@ -55,4 +56,23 @@ header {
   padding: 15px 20px 10px;
   vertical-align: top;
   margin: 20px 0;
+}
+// Post navigation (next/prev post)
+#post_nav {
+  width:100%;
+  display: inline-block;
+  border-bottom: 1px solid $border-color;
+}
+#post_nav .prev {
+  @extend %padding-regular;
+  width: 50%;
+  display: inline-block;
+  float: left;
+  text-align: left;
+}
+#post_nav .next {
+  @extend %padding-regular;
+  width: 50%;
+  display: inline-block;
+  text-align: right;
 }
