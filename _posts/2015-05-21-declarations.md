@@ -94,7 +94,7 @@ class, or as a class member, however they must not be declared within a method.
 
 #### An enum outside a class:
 
-{% highlight java %}
+{% highlight java linenos %}
 
 enum CoffeeSize { BIG, HUGE, OVERWHELMING } // this cannot be
                                             // private or protected
@@ -118,7 +118,7 @@ with only the __public or default modifier__, just like a class (non-inner)._
 
 #### An enum inside a class:
 
-{% highlight java %}
+{% highlight java linenos %}
 
 class Coffee2 {
     enum CoffeeSize {BIG, HUGE, OVERWHELMING }; // <-- semicolon is optional
@@ -145,7 +145,7 @@ enumerated CoffeeSize types are actually __instances of CoffeeSize__. In other w
 is of type CoffeeSize. Think of an enum as a kind of class, that looks something
 (but not exactly) like this:
 
-{% highlight java %}
+{% highlight java linenos %}
 
 // conceptual example of how you can think
 // about enums
@@ -196,7 +196,7 @@ somehow have the `OVERWHELMING` constant override the `getLidCode()` method.
 
 The below code snippet describes two of the above preceding points:
 
-{% highlight java %}
+{% highlight java linenos %}
 
 enum CoffeeSize {
     BIG(8),

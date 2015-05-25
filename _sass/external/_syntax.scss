@@ -61,3 +61,5 @@
 .vg { color: #008080 } /* Name.Variable.Global */
 .vi { color: #008080 } /* Name.Variable.Instance */
 .il { color: #009999 } /* Literal.Number.Integer.Long */
+.lineno { opacity:.2; color: #cccccc;-webkit-transition: opacity .5s linear; transition: opacity .5s linear;} /* Line nos */
+.highlight:hover .lineno { opacity: 1 } /* Show line nos on hover */

@@ -24,7 +24,7 @@ subclass **if the subclass is in a different package** from the parent class.
 
 The following code snippet makes it clear:
 
-{% highlight java %}
+{% highlight java linenos %}
 package certification;
 public class Parent {
     protected int x = 9; // protected access
