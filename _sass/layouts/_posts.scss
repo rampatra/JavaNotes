@@ -64,9 +64,9 @@ header {
   border-bottom: 1px solid $border-color;
 }
 #post_nav .prev {
-  padding: $padding-small $padding-large /2 $padding-small $padding-large;
+  padding: $padding-x-small $padding-large /2 $padding-x-small $padding-large;
   @media (max-width: 1000px) {
-    padding: $padding-small * 1.5 $padding-large / 1.6;
+    padding: $padding-x-small * 1.5 $padding-large / 1.6;
   }
   width: 50%;
   display: inline-block;
@@ -74,9 +74,9 @@ header {
   text-align: left;
 }
 #post_nav .next {
-  padding: $padding-small $padding-large $padding-small $padding-large /2;
+  padding: $padding-x-small $padding-large $padding-x-small $padding-large /2;
   @media (max-width: 1000px) {
-    padding: $padding-small * 1.5 $padding-large / 1.6;
+    padding: $padding-x-small * 1.5 $padding-large / 1.6;
   }
   width: 50%;
   display: inline-block;
