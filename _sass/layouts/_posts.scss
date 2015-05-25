@@ -64,14 +64,20 @@ header {
   border-bottom: 1px solid $border-color;
 }
 #post_nav .prev {
-  @extend %padding-regular;
+  padding: $padding-small $padding-large /2 $padding-small $padding-large;
+  @media (max-width: 1000px) {
+    padding: $padding-small * 1.5 $padding-large / 1.6;
+  }
   width: 50%;
   display: inline-block;
   float: left;
   text-align: left;
 }
 #post_nav .next {
-  @extend %padding-regular;
+  padding: $padding-small $padding-large $padding-small $padding-large /2;
+  @media (max-width: 1000px) {
+    padding: $padding-small * 1.5 $padding-large / 1.6;
+  }
   width: 50%;
   display: inline-block;
   text-align: right;
