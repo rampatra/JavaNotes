@@ -60,25 +60,16 @@ header {
 // Post navigation (next/prev post)
 #post_nav {
   width:100%;
-  display: inline-block;
+  display: flex;
   border-bottom: 1px solid $border-color;
 }
 #post_nav .prev {
-  padding: $padding-x-small $padding-large /2 $padding-x-small $padding-large;
-  @media (max-width: 1000px) {
-    padding: $padding-x-small * 1.5 $padding-large / 1.6;
-  }
+  @extend %padding-left-regular;
   width: 50%;
-  display: inline-block;
-  float: left;
   text-align: left;
 }
 #post_nav .next {
-  padding: $padding-x-small $padding-large $padding-x-small $padding-large /2;
-  @media (max-width: 1000px) {
-    padding: $padding-x-small * 1.5 $padding-large / 1.6;
-  }
+  @extend %padding-right-regular;
   width: 50%;
-  display: inline-block;
   text-align: right;
 }
