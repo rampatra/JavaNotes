@@ -472,7 +472,9 @@ Array (initialized) | Default values of their respective types as discussed abov
 
 #### Default values for Local (also called Stack or Automatic) variables (Primitive and Non-primitive):
 
-
+Local variables, including primitives, always, always, always must be initialized before you attempt to use them 
+(though not necessarily on the same line of code). Java does not give local variables a default value, you must 
+explicitly initialize them with a value.
 
 
 
