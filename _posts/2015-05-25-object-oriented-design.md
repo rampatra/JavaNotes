@@ -44,7 +44,7 @@ In OO, the concept of _IS-A_ is based on __class inheritance or interface implem
 
 For example in the below figure:
 
-{% img /img/posts/IS-A.png 150x250 %}
+{% picture IS-A.png  alt="yyy" %}
 
 _"Car extends Vehicle" means "Car IS-A Vehicle."<br/>
 "Subaru extends Car" means "Subaru IS-A Car."_

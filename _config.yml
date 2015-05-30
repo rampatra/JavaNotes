@@ -66,6 +66,14 @@ paginate_path: "blog/page:num"
 # POST NAVIGATION
 post_navigation: true
 
+# PLUGINS
+gems:
+  - jekyll-picture-tag
+
+# JEKYLL PICTURE TAG SETTINGS
+picture:
+  source: "img/posts"
+
 # BUILD SETTINGS
 markdown: kramdown
 highlighter: pygments
