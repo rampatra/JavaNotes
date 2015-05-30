@@ -67,8 +67,7 @@ paginate_path: "blog/page:num"
 post_navigation: true
 
 # PLUGINS
-gems:
-  - jekyll-picture-tag
+gems: [jekyll-picture-tag]
 
 # JEKYLL PICTURE TAG SETTINGS
 picture:
