@@ -89,7 +89,6 @@ public class Overriding {
     public static void main (String [] args) {
         Animal a = new Animal();
         Animal b = new Horse();  // Animal ref, but a Horse object
-        Horse h = new Horse();
 
         a.eat();    // Runs the Animal version of eat()
         b.eat();    // Runs the Horse version of eat()
@@ -106,3 +105,33 @@ Some more rules which may be obvious:
 * You cannot override a method marked `static`.
 * If a method can't be inherited, you cannot override it. As said earlier,
 overriding implies that you're reimplementing a method you inherited.
+
+__Dynamic Method Invocation:__ Overridden instance methods are dynamically invoked based on the real object's type
+rather than the reference type. For example, `b.eat()` will actually run the Horse version of `eat()`.
+
+-------
+
+### Q&A
+
+__Q1.__ Will the below code compile?
+
+{% highlight java linenos %}
+
+class Animal {
+    public void eat() throws Exception {
+        // throws an Exception
+    }
+}
+
+class Dog extends Animal {
+    public void eat() { /* no Exceptions */}
+
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        Dog d = new Dog();
+        d.eat();
+        a.eat();
+    }
+}
+
+{% endhighlight %}
