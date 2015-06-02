@@ -66,7 +66,7 @@ class Horse extends Animal {
         return new Horse();
     }
 
-    public void eat() throws Exception {    // Not a method override as the overridden method doesn't
+    public void eat() throws Exception {    // Invalid method override as the overridden method doesn't
                                             // throw any checked exceptions while overriding method does
                                             // (gives a compiler error)
         System.out.println("Horse Eat");
@@ -77,7 +77,7 @@ class Horse extends Animal {
         System.out.println("Horse Sleep");
     }
 
-    public void sleep() throws Exception {  // Not a method override as Exception is neither
+    public void sleep() throws Exception {  // Invalid method override as Exception is neither
                                             // same as nor a subclass of IOException
                                             // (gives a compiler error)
         System.out.println("Horse Sleep");
