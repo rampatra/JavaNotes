@@ -5,7 +5,7 @@ title: Overriding
 
 Reimplementing the inherited method from the parent class in the child class is called __Overriding in Java__.
 
-There are certain __rules for overriding__, in the below code we will point out all of the rules:
+There are certain __rules for overriding__, the below code points out all of the rules:
 
 {% highlight java linenos %}
 
