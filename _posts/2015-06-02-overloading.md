@@ -127,6 +127,3 @@ Figure out which version of `eat()` will run on each of the invocation made?
        a2.eat("treats");
     4. Animal ah2 = new Horse();
        ah2.eat("Carrots");
-
-__Q2.__
-
