@@ -238,5 +238,4 @@ __Some points to note:__
 * Every enum has a static method, values(), that returns an array of the enum's
   values in the order they're declared.
 
-
 {% include responsive_ad.html %}

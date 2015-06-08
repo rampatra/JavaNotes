@@ -109,7 +109,7 @@ overriding implies that you're reimplementing a method you inherited.
 __Dynamic Method Invocation:__ Overridden instance methods are dynamically invoked based on the real object's type
 rather than the reference type. For example, `b.eat()` will actually run the Horse version of `eat()`.
 
--------
+{% include responsive_ad.html %}
 
 ### Q&A
 

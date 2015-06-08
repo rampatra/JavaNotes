@@ -81,3 +81,5 @@ declared type__.
 type, it can reference any object of any class that implements the interface.
 
 More on polymorphism in [Overriding](/2015/05/29/overriding.html) & Overloading in Java.
+
+{% include responsive_ad.html %}

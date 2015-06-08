@@ -80,15 +80,18 @@ The output of the above program is:
     In the Horse version
     In the Animal version
 
-Notice the call to `doStuff(animalRefToHorse)`, here the `Animal` version of `doStuff()` is called despite the actual
-object being passed is of a `Horse`. The reference type (not the object type) determines which overloaded method is
+Notice the call `doStuff(animalRefToHorse)`, here the `Animal` version of `doStuff()` is called despite the actual
+object being passed is of a `Horse`. The __reference type__ (not the object type) determines which overloaded method is
 invoked.
 
 To summarize, __which overridden version__ of the method to call (in other words, from which class in the
 inheritance tree) is decided __at runtime based on object type__, but __which overloaded version__ of the method to
 call is based on the __reference type of the argument passed at compile time__.
 
----------
+Therefore, polymorphism doesn't determine which overloaded version is called, polymorphism does come into play when
+the decision is about which overridden version of a method is called.
+
+{% include responsive_ad.html %}
 
 ### Q&A
 
