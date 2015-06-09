@@ -80,6 +80,6 @@ declared type__.
 * A reference variable can be declared as a class type or an interface type. If the variable is declared as an interface
 type, it can reference any object of any class that implements the interface.
 
-More on polymorphism in [Overriding](/2015/05/29/overriding.html) & Overloading in Java.
+More on polymorphism in [Overriding](/2015/05/29/overriding.html) & [Overloading](/2015/06/02/overloading.html) in Java.
 
 {% include responsive_ad.html %}
