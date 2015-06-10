@@ -215,14 +215,69 @@ class WidenAndBox {
 
 {% endhighlight %}
 
+The above program fails to compile, the JVM __does not widen and then box__. It may be because widening existed in the earlier
+versions of Java and it wanted a method that is invoked via widening shouldn't lose out to a newly created method that
+relies on boxing. In other words, Java designers wanted the preexisting code should function the way it used to.
 
+Now imagine if JVM tried to box first, the `byte` would have been converted to a `Byte`. Now we're back to trying to widen a
+`Byte` to a `Long`, and of course, the _IS-A_ test fails.
+
+So both of the ways didn't work.
+
+Now let's see another program when the compiler has to autobox and then widen the parameter for a proper match.
+
+{% highlight java linenos %}
+
+class BoxAndWiden {
+    static void go(Object obj) {
+        Byte b2 = (Byte) obj;    // ok - obj refers to a Byte object
+        System.out.println(b2);
+    }
+
+    public static void main(String[] args) {
+        byte b = 5;
+        go(b);
+    }
+}
+
+{% endhighlight %}
+
+The above code compiles and produces the output `5`. Firstly, the `byte b` was boxed to a `Byte`. And then the `Byte`
+reference was widened to an `Object` (since `Byte` extends `Object`). So, the `go()` method got an `Object` reference
+that actually refers to a `Byte` object.
+
+From the above 2 examples its certain that the JVM __can never widen and then box__ but __can box and then widen__.
 
 
 __Combine both Widening and Boxing with Var-args__
 
+{% highlight java linenos %}
 
+class Vararg {
 
+    static void wide_vararg(long... x) {
+        System.out.println("long...");
+    }
 
+    static void box_vararg(Integer... x) {
+        System.out.println("Integer...");
+    }
+
+    public static void main(String[] args) {
+        int i = 5;
+        wide_vararg(i, i);  // needs to widen and use var-args
+        box_vararg(i, i);   // needs to box and use var-args
+    }
+}
+
+{% endhighlight %}
+
+The above code compiles fine and produces the output:
+
+    long...
+    Integer...
+
+From the result, its clear that we can __successfully combine var-args with either widening or boxing__.
 
 {% include responsive_ad.html %}
 
