@@ -1,4 +1,4 @@
-# [Java Concepts]({{ site.baseurl }}/)
+# [Java Concepts](http://java.ramswaroop.me)
 
 An attempt to demystify the most misunderstood concepts in **Java**.
 It explains different scenarios which may confound even many experienced java programmers.
