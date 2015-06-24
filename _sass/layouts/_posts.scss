@@ -58,17 +58,17 @@ header {
   margin: 20px 0;
 }
 // Post navigation (next/prev post)
-#post_nav {
+#post-nav {
   width:100%;
   display: flex;
   border-bottom: 1px solid $border-color;
 }
-#post_nav .prev {
+#post-nav .prev {
   @extend %padding-left-regular;
   width: 50%;
   text-align: left;
 }
-#post_nav .next {
+#post-nav .next {
   @extend %padding-right-regular;
   width: 50%;
   text-align: right;

@@ -17,7 +17,7 @@ layout: default
 
 <!-- Post navigation -->
 {% if site.post_navigation %}
-<div id="post_nav">
+<div id="post-nav">
     {% if page.previous.url %}
         <a class="prev" href="{{ page.previous.url }}" {% if page.next.url == null %} style="border-right:1px solid rgba(0, 0, 0, 0.1)" {% endif %}><h3>{{ page.previous.title }}</h3> &laquo; {{ site.theme.str_prev }}</a>
     {% endif %}
