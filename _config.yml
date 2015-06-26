@@ -5,7 +5,7 @@ url: "http://java.ramswaroop.me" # the base hostname & protocol for your site
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta
-  title: Java Concepts
+  title: Java Notes
   avatar: java-logo.png
   gravatar: # Email MD5 hash
   description: "A website with blog posts and pages" # used by search engines

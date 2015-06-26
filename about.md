@@ -5,16 +5,14 @@ permalink: /about/
 # feature-img: "img/sample_feature_img_2.png"
 ---
 
-An attempt to demystify the most misunderstood concepts in **Java**.
-It explains different scenarios which may confound even many experienced java programmers.
+My Java notes jotted down from some of the best books in Java __(Thinking in Java, SCJP Java,
+Effective Java, Java Puzzlers and of course JLS)__ published as a blog with help of the awesome
+__Github's Jekyll__.
 
-In short, this [blog]({{ site.baseurl }}/) is for those who have been coding in **Java** for a while, **not for greenhorns**.
+It attempts to demystify some of the most misunderstood concepts in **Java** which may confound
+even many experienced java programmers.
 
-### Sources
-SCJP Java, Effective Java, Java Puzzlers, Thinking in Java and of course JLS.
-
-### Tech Specs
-Made with Jekyll using Type theme.
+In short, this blog is for those who have been coding in **Java** for a while, **not for greenhorns**.
 
 ### License
 GNU General Public License v2.0
