@@ -89,8 +89,8 @@ To summarize, __which overridden version__ of the method to call (in other words
 inheritance tree) is decided __at runtime based on object type__, but __which overloaded version__ of the method to
 call is based on the __reference type of the argument passed at compile time__.
 
-Therefore, polymorphism doesn't determine which overloaded version is called, polymorphism does come into play when
-the decision is about which overridden version of a method is called.
+Therefore, __polymorphism doesn't determine which overloaded version is called, polymorphism does come into play when
+the decision is about which overridden version of a method is called__.
 
 ### The confounding part in method overloading
 
