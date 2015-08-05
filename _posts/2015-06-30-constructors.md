@@ -130,7 +130,8 @@ Code is the same. Compiler doesn’t insert anything here.
 __4.__ Constructors can use __any access modifier, including private__. (A private constructor means only code within the
 class itself can instantiate an object of that type, so if the private constructor class wants to allow an instance of
 the class to be used, the class must provide a static method or variable that allows access to an instance created
-from within the class. Moreover, for a Singleton you are bound to make all constructors of class private.)
+from within the class. Moreover, for a Singleton you are bound to make all constructors of class private.) Also note that
+the default constructor has the same access modifier as the class.
 
 <table>
 
@@ -174,6 +175,45 @@ private class Foo {
 </tr>
 
 </table>
+
+
+__5.__ A call to `super()` can be either a _no-arg_ call or can include arguments passed to the super constructor. But
+the compiler always inserts a _no-arg_ call to `super()`. So there would be a problem in the below case:
+
+<table>
+
+<tr>
+<td>
+{% highlight java %}
+class Animal {
+    Animal(String name) { }
+}
+class Horse extends Animal {
+    Horse() { }
+}
+{% endhighlight %}
+</td>
+<td>
+{% highlight java %}
+class Animal {
+    Animal(String name) { }
+}
+class Horse extends Animal {
+    Horse() {
+        super(); // problem!
+    }
+}
+{% endhighlight %}
+</td>
+</tr>
+
+</table>
+
+As there is no _no-arg_ constructor in Animal class, the call to `super()` (inserted by the compiler) in `Horse` class will
+fail. In fact, the compiler won't even compile the code on the left hand side.
+
+You can solve this in two ways, either you can provide a _no-arg_ constructor in `Animal` class or you can
+yourself type `super("some name")` as first statement in the constructor in `Horse` class.
 
 {% include responsive_ad.html %}
 
