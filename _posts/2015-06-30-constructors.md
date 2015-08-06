@@ -301,7 +301,34 @@ public class Animal {
 }
 {% endhighlight %}
 
-1. `abc`
-2. Empty string
-3. Won't compile
-4. Runtime error
+A. `abc`
+B. Empty string
+C. Won't compile
+D. Runtime error
+
+__Q2.__ What is the result?
+
+{% highlight java linenos %}
+class Top {
+    public Top(String s) {
+        System.out.print("B");
+    }
+}
+
+public class Bottom2 extends Top {
+    public Bottom2(String s) {
+        System.out.print("D");
+    }
+
+    public static void main(String[] args) {
+        new Bottom2("C");
+        System.out.println(" ");
+    }
+}
+{% endhighlight %}
+
+A. BD
+B. DB
+C. BDC
+D. DBC
+E. Compilation fails
