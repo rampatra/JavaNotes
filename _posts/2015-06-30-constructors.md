@@ -301,9 +301,9 @@ public class Animal {
 }
 {% endhighlight %}
 
-A. `abc`
-B. Empty string
-C. Won't compile
+A. `abc`<br>
+B. Empty string<br>
+C. Won't compile<br>
 D. Runtime error
 
 __Q2.__ What is the result?
@@ -327,8 +327,8 @@ public class Bottom2 extends Top {
 }
 {% endhighlight %}
 
-A. BD
-B. DB
-C. BDC
-D. DBC
+A. BD<br>
+B. DB<br>
+C. BDC<br>
+D. DBC<br>
 E. Compilation fails
