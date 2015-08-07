@@ -332,3 +332,40 @@ B. DB<br>
 C. BDC<br>
 D. DBC<br>
 E. Compilation fails
+
+__Q3.__ What is the result?
+
+{% highlight java linenos %}
+class Alpha {
+    static String s = " ";
+
+    protected Alpha() {
+        s += "alpha ";
+    }
+}
+
+class SubAlpha extends Alpha {
+    private SubAlpha() {
+        s += "sub ";
+    }
+}
+
+public class SubSubAlpha extends Alpha {
+
+    private SubSubAlpha() {
+        s += "subsub ";
+    }
+
+    public static void main(String[] args) {
+        new SubSubAlpha();
+        System.out.println(s);
+    }
+}
+{% endhighlight %}
+
+A. subsub<br>
+B. sub subsub<br>
+C. alpha subsub<br>
+D. alpha sub subsub<br>
+E. Compilation fails<br>
+F. An exception is thrown at runtime
