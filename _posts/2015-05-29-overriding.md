@@ -66,15 +66,20 @@ class Horse extends Animal {
         return new Horse();
     }
 
-    public void eat() throws Exception {    // Invalid method override as the overridden method doesn't
-                                            // throw any checked exceptions while overriding method does
-                                            // (gives a compiler error)
+    public void eat() throws Exception {   // Invalid method override as the overridden method doesn't
+                                           // throw any checked exceptions while overriding method does
+                                           // (gives a compiler error)
         System.out.println("Horse Eat");
     }
 
-    public void sleep() throws FileSystemException {    // Valid method override as FileSystemException
-                                                        // is a subclass of IOException
+    public void sleep() throws FileSystemException {   // Valid method override as FileSystemException
+                                                       // is a subclass of IOException
         System.out.println("Horse Sleep");
+    }
+    
+    public void sleep() {                        // Valid method override as it isn't mandatory for
+                                                 // the overridden method to throw any exception
+            System.out.println("Horse Sleep");
     }
 
     public void sleep() throws Exception {  // Invalid method override as Exception is neither
@@ -90,9 +95,9 @@ public class Overriding {
         Animal a = new Animal();
         Animal b = new Horse();  // Animal ref, but a Horse object
 
-        a.eat();    // Runs the Animal version of eat()
-        b.eat();    // Runs the Horse version of eat()
-                    // (Concept called Dynamic method invocation)
+        a.eat();   // Runs the Animal version of eat()
+        b.eat();   // Runs the Horse version of eat()
+                   // (Concept called Dynamic method invocation)
 
     }
 }
