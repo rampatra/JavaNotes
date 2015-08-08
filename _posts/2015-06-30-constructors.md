@@ -301,9 +301,9 @@ public class Animal {
 }
 {% endhighlight %}
 
-A. `abc`<br>
-B. Empty string<br>
-C. Won't compile<br>
+A. `abc`  
+B. Empty string  
+C. Won't compile  
 D. Runtime error
 
 __Q2.__ What is the result?
@@ -327,10 +327,10 @@ public class Bottom2 extends Top {
 }
 {% endhighlight %}
 
-A. BD<br>
-B. DB<br>
-C. BDC<br>
-D. DBC<br>
+A. BD  
+B. DB  
+C. BDC  
+D. DBC  
 E. Compilation fails
 
 __Q3.__ What is the result?
@@ -363,9 +363,53 @@ public class SubSubAlpha extends Alpha {
 }
 {% endhighlight %}
 
-A. subsub<br>
-B. sub subsub<br>
-C. alpha subsub<br>
-D. alpha sub subsub<br>
-E. Compilation fails<br>
+A. subsub  
+B. sub subsub  
+C. alpha subsub  
+D. alpha sub subsub  
+E. Compilation fails  
 F. An exception is thrown at runtime
+
+__Q4.__
+
+{% highlight java linenos %}
+
+class Building {
+    Building() {
+        System.out.print("b ");
+    }
+
+    Building(String name) {
+
+        this();
+        System.out.print("bn " + name);
+    }
+}
+
+public class House extends Building {
+    House() {
+        System.out.print("h ");
+    }
+
+    House(String name) {
+        this();
+        System.out.print("hn " + name);
+
+    }
+
+    public static void main(String[] args) {
+        new House("x ");
+    }
+}
+{% endhighlight %}
+
+What is the result?
+
+A. h hn x  
+B. hn x h  
+C. b h hn x  
+D. b hn x h  
+E. bn x h hn x  
+F. b bn x h hn x  
+G. bn x b h hn x  
+H. Compilation fails
