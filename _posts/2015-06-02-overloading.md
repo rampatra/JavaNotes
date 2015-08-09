@@ -35,6 +35,9 @@ class Bar extends Foo {
     public String doStuff(int y, String s) { // Invalid overload, MUST change method's
         return "s";                          // argument list (compiler error)
     }
+    
+    public static void doStuff(int x) { }  // Invalid overload, MUST change method's
+                                           // argument list (compiler error) 
 }
 
 {% endhighlight %}
