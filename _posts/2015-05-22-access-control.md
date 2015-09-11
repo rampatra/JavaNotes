@@ -16,8 +16,7 @@ Two __types of access__ are there:
 * Whether a subclass can inherit a member of its superclass
 
 A **default member** may be accessed only if the class accessing the member belongs to the same package,
-whereas a **protected member** can be accessed by a subclass in the same package _(through dot operator and inheritance)_ and even if it is
-is in a different package _(through inheritance only)_.
+whereas a **protected member** can be accessed by a subclass in the same package _(through dot operator and inheritance)_ and even if it is in a different package _(through inheritance only)_.
 
 You cannot access a protected member using the dot (.) operator in the
 subclass **if the subclass is in a different package** from the parent class.
@@ -28,6 +27,10 @@ The following code snippet makes it clear:
 package certification;
 public class Parent {
     protected int x = 9; // protected access
+    
+    protected void printMessage(String message){
+        System.out.println(message);
+    }
 }
 
 package other; // different package
@@ -40,6 +43,8 @@ class Child extends Parent {
                                  // p reference?
         System.out.println("X in parent is " + p.x); // Compiler
                                                      // error
+        System.out.println(p.printMessage("Calling Protected method of Parent class, Compiler should throw error."));//Compiler
+                                                                                                                    // error
     }
 }
 {% endhighlight %}
