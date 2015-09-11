@@ -28,8 +28,8 @@ package certification;
 public class Parent {
     protected int x = 9; // protected access
     
-    protected void printMessage(String message){
-        System.out.println(message);
+    protected int getX() {
+        return x;
     }
 }
 
@@ -43,8 +43,8 @@ class Child extends Parent {
                                  // p reference?
         System.out.println("X in parent is " + p.x); // Compiler
                                                      // error
-        System.out.println(p.printMessage("Calling Protected method of Parent class, Compiler should throw error."));//Compiler
-                                                                                                                    // error
+        System.out.println("X in parent is " + p.getX()); // Compiler
+                                                          // error
     }
 }
 {% endhighlight %}
