@@ -49,7 +49,7 @@ are all optional.
 
 {% highlight java linenos %}
 
-class Animal {
+public class Animal {
 }
 
 class Horse extends Animal {
@@ -108,7 +108,7 @@ __The 3 factors that can make overloading a little tricky _(written in order of 
 
 {% highlight java linenos %}
 
-class MethodOverloading {
+public class MethodOverloading {
 
     static void go(float x) {
         System.out.print("float ");
@@ -176,7 +176,7 @@ code:
 
 {% highlight java linenos %}
 
-class Animal {
+public class Animal {
     static void eat() {
     }
 }
@@ -204,7 +204,7 @@ Let's see what happens when the compiler has to widen and then autobox the param
 
 {% highlight java linenos %}
 
-class WidenAndBox {
+public class WidenAndBox {
     static void go(Long x) {
         System.out.println("Long");
     }
@@ -231,7 +231,7 @@ Now let's see another program when the compiler has to autobox and then widen th
 
 {% highlight java linenos %}
 
-class BoxAndWiden {
+public class BoxAndWiden {
     static void go(Object obj) {
         Byte b2 = (Byte) obj;    // ok - obj refers to a Byte object
         System.out.println(b2);
@@ -256,7 +256,7 @@ __Combine both Widening and Boxing with Var-args__
 
 {% highlight java linenos %}
 
-class Vararg {
+public class Vararg {
 
     static void wide_vararg(long... x) {
         System.out.println("long...");
@@ -266,10 +266,15 @@ class Vararg {
         System.out.println("Integer...");
     }
 
+    static void box_widen_vararg(Object... x) {
+        System.out.println("Object...");
+    }
+
     public static void main(String[] args) {
         int i = 5;
         wide_vararg(i, i);  // needs to widen and use var-args
         box_vararg(i, i);   // needs to box and use var-args
+        box_widen_vararg(i, i); // needs to box and then widen and finally use var-args
     }
 }
 
@@ -279,6 +284,7 @@ The above code compiles fine and produces the output:
 
     long...
     Integer...
+    Object...
 
 From the result, its clear that we can __successfully combine var-args with either widening or boxing__.
 
