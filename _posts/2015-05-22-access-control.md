@@ -39,7 +39,7 @@ class Child extends Parent {
     public void testIt() {
         System.out.println("x is " + x); // No problem; Child
                                          // inherits x
-        Parent p = new Parent(); // Can we access x using the
+        Parent p = new Parent(); // Can we access x using
                                  // p reference?
         System.out.println("X in parent is " + p.x); // Compiler
                                                      // error

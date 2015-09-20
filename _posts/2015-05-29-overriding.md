@@ -15,12 +15,12 @@ class Animal {
         System.out.println("Animal Drink");
     }
 
-    protected void walk() {
-        System.out.println("Animal Walk");
-    }
-
     public void eat() {
         System.out.println("Animal Eat");
+    }
+
+    protected void walk() {
+        System.out.println("Animal Walk");
     }
 
     public void run() {
