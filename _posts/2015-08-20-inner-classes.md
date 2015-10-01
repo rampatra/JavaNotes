@@ -31,7 +31,7 @@ public class MyOuter {
 When you compile it : 
 
 {% highlight java %}
-`javac MyOuter.java`
+javac MyOuter.java
 {% endhighlight %}
 
 you will end up with two class files:
@@ -73,6 +73,27 @@ an instance method) can access any other member of the outer class, private or n
 the same.
 
 ### Instantiate the inner class
+
+To create an instance of an inner class, you must have an instance of the outer class to tie to the inner class. There 
+are no exceptions to this rule: __An inner class instance can never stand alone without a direct relationship to an 
+instance of the outer class__.
+
+{% highlight java linenos %}
+public class MyOuter {
+    private int x = 7;
+
+    public void makeInner() {
+        MyInner in = new MyInner();  // make an inner instance
+        in.seeOuter();
+    }
+
+    class MyInner {
+        public void seeOuter() {
+            System.out.println("Outer x is " + x);
+        }
+    }
+}
+{% endhighlight %}
 
 
 
