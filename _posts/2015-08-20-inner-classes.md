@@ -78,6 +78,8 @@ To create an instance of an inner class, you must have an instance of the outer 
 are no exceptions to this rule: __An inner class instance can never stand alone without a direct relationship to an 
 instance of the outer class__.
 
+#### Instantiating an Inner Class from Within the Outer Class
+
 {% highlight java linenos %}
 public class MyOuter {
     private int x = 7;
@@ -95,6 +97,15 @@ public class MyOuter {
 }
 {% endhighlight %}
 
+#### Instantiating an Inner Class from Outside the Outer Class Instance Code
+
+{% highlight java %}
+public static void main(String[] args) {
+    MyOuter mo = new MyOuter(); // gotta get an instance! 
+    MyOuter.MyInner inner = mo.new MyInner(); 
+    inner.seeOuter();
+}
+{% endhighlight %}
 
 
 
