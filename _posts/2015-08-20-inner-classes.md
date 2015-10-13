@@ -11,12 +11,9 @@ methods it can also have member classes. You can say inner classes are of 4 type
  * Anonymous inner classes
  * Static nested classes
 
-### When it is good to have an inner class?
+## Inner classes
 
-Let's say you have to design a chat client in java through which a user can send messages to the server. 
-chat-client–specific methods (accept input, read new messages from server, send user input back to server, and so on) to 
-be in the class
-
+These are just "regular" inner classes which are not method-local, anonymous or static.
 
 ### Little Basics
 
@@ -28,7 +25,7 @@ public class MyOuter {
 }
 {% endhighlight %}
 
-When you compile it : 
+When you compile it: 
 
 {% highlight java %}
 javac MyOuter.java
@@ -97,15 +94,35 @@ public class MyOuter {
 }
 {% endhighlight %}
 
+The reason the above syntax works is because the outer class instance method code is doing the instantiating. In other
+words, there's already an instance of the outer class—the instance running the makeInner() method.
+
 #### Instantiating an Inner Class from Outside the Outer Class Instance Code
 
 {% highlight java %}
 public static void main(String[] args) {
-    MyOuter mo = new MyOuter(); // gotta get an instance! 
-    MyOuter.MyInner inner = mo.new MyInner(); 
+    MyOuter mo = new MyOuter(); // gotta get an instance of outer class
+    MyOuter.MyInner inner = mo.new MyInner(); // instantiate inner class from outer class instance
     inner.seeOuter();
 }
 {% endhighlight %}
+
+As we know that we must have an outer class instance to create an inner class instance, the above code would be the way
+to go. _Instantiating an inner class is the only scenario in which you'll invoke new on an instance as opposed to invoking
+new to construct an instance._
+
+If you are a one liner then the below code is for you:
+
+{% highlight java %}
+public static void main(String[] args) {
+     MyOuter.MyInner inner = new MyOuter().new MyInner(); // all in one line
+     inner.seeOuter();
+}
+{% endhighlight %}
+
+#### Referencing the Inner or Outer Instance from Within the Inner Class
+
+
 
 
 
