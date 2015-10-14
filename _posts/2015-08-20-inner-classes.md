@@ -136,13 +136,27 @@ So within an inner class code, the `this` reference refers to the instance of th
 since `this` always refers to the currently executing object. But when the inner class code wants an explicit reference 
 to the outer class instance that the inner instance is tied to, it can access the outer class `this` like:
 
-{% highlight java %}
-class MyInner {
-    public void seeOuter() {
-        System.out.println("Outer x is " + x); 
-        System.out.println("Inner class ref is " + this); 
-        System.out.println("Outer class ref is " + MyOuter.this);
-    } 
+{% highlight java linenos %}
+public class MyOuter {
+    private int x = 7;
+
+    public void makeInner() {
+        MyInner in = new MyInner();
+        in.seeOuter();
+    }
+
+    class MyInner {
+        public void seeOuter() {
+            System.out.println("Outer x is " + x);
+            System.out.println("Inner class ref is " + this);
+            System.out.println("Outer class ref is " + MyOuter.this);
+        }
+    }
+
+    public static void main(String[] args) {
+        MyOuter.MyInner inner = new MyOuter().new MyInner();
+        inner.seeOuter();
+    }
 }
 {% endhighlight %}
 
