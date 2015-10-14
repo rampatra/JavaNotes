@@ -122,8 +122,33 @@ public static void main(String[] args) {
 
 #### Referencing the Inner or Outer Instance from Within the Inner Class
 
+An object refers to itself normally by using the `this` reference. The `this` reference is the way an object can pass a
+reference to itself to some other code as a method argument:
 
+{% highlight java %}
+public void myMethod() {
+    MyClass mc = new MyClass();
+    mc.doStuff(this); // pass a ref to object running myMethod
+}
+{% endhighlight %}
 
+So within an inner class code, the `this` reference refers to the instance of the inner class, as you'd probably expect, 
+since `this` always refers to the currently executing object. But when the inner class code wants an explicit reference 
+to the outer class instance that the inner instance is tied to, it can access the outer class `this` like:
+
+{% highlight java %}
+class MyInner {
+    public void seeOuter() {
+        System.out.println("Outer x is " + x); 
+        System.out.println("Inner class ref is " + this); 
+        System.out.println("Outer class ref is " + MyOuter.this);
+    } 
+}
+{% endhighlight %}
+
+NOTE: Normally the inner class code doesn't need a reference to the outer class, since it already has an implicit one
+it's using to access the members of the outer class, it would need a reference to the outer class if it needed to pass
+that reference to some other code as in the above example.
 
 
 
