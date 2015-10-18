@@ -1,15 +1,30 @@
 ---
 layout: post
-title: Inner Classes
+title: Nested Classes
 ---
 
-A class inside another class is called an __Inner Class__. In other words, as a class has member variables and member 
-methods it can also have member classes. You can say inner classes are of 4 types:
+A class inside another class is called a __Nested Class__. In other words, as a class has member variables and member 
+methods it can also have member classes. 
 
- * Inner classes
+Nested classes are divided into two categories: __static__ and __non-static__. Nested classes that are declared static 
+are called __static nested classes__. Non-static nested classes are called __inner classes__.
+
+You can say inner classes are of 3 types:
+
+ * "Regular" Inner classes
  * Method-local inner classes
  * Anonymous inner classes
- * Static nested classes
+ 
+## Why Use Nested Classes?
+
+ * __It is a way of logically grouping classes that are only used in one place__: If a class is useful to only one other 
+ class, then it is logical to embed it in that class and keep the two together. Nesting such "helper classes" makes 
+ their package more streamlined.
+ * __It increases encapsulation__: Consider two top-level classes, A and B, where B needs access to members of A that 
+ would otherwise be declared private. By hiding class B within class A, A's members can be declared private and B can 
+ access them. In addition, B itself can be hidden from the outside world.
+ * __It can lead to more readable and maintainable code__: Nesting small classes within top-level classes places the 
+ code closer to where it is used.
 
 ## Inner classes
 
@@ -163,6 +178,10 @@ public class MyOuter {
 NOTE: Normally the inner class code doesn't need a reference to the outer class, since it already has an implicit one
 it's using to access the members of the outer class, it would need a reference to the outer class if it needed to pass
 that reference to some other code as in the above example.
+
+## Method-Local Inner Classes
+
+
 
 
 
