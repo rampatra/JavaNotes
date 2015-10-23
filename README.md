@@ -10,5 +10,7 @@ even many experienced java programmers.
 In short, this blog is for those who have been coding in **Java** for a while (**and not for greenhorns**) who
 can **contribute** too by simply sending a pull request.
 
+After completing this if you want to get your hands dirty then do try to solve some problems involving various [algorithms and data structures, in Java](https://github.com/ramswaroop/Algorithms-and-Data-Structures-in-Java).
+
 ### License
 GNU General Public License v2.0
