@@ -181,6 +181,63 @@ that reference to some other code as in the above example.
 
 ## Method-Local Inner Classes
 
+A regular inner class scoped inside another class's curly braces, but outside any method code (in other words, at the
+ same level that an instance variable is declared) is called a __method-local inner class__.
+ 
+{% highlight java linenos %}
+class Outer {
+    
+    private String x = "Outer";
+
+    void doStuff() {
+        
+        class Inner {
+            
+            public void seeOuter() {
+                System.out.println("Outer x is " + x);
+            } // close inner class method
+            
+        } // close inner class definition
+        
+    } // close outer class method doStuff()
+
+} // close outer class
+{% endhighlight %}
+
+In the above example, `class Inner` is the method-local inner class. But the inner class is useless because you are never 
+instantiating the inner class. Just because you declared the class doesn't mean you created an instance of it. So to 
+use the inner class, you must make an instance of it somewhere within the method but __below the inner class definition
+(or the compiler won't be able to find the inner class)__. 
+
+The following legal code shows how to instantiate and use a method-local inner class:
+
+{% highlight java linenos %}
+class Outer {
+    
+    private String x = "Outer";
+
+    void doStuff() {
+        
+        class Inner {
+            
+            public void seeOuter() {
+                System.out.println("Outer x is " + x);
+            } // close inner class method
+            
+            MyInner mi = new MyInner();  // This line must come
+                                         // after the class
+                                         
+            mi.seeOuter();
+            
+        } // close inner class definition
+        
+    } // close outer class method doStuff()
+
+} // close outer class
+{% endhighlight %}
+
+### What a Method-Local Inner Object Can and Can't Do
+ 
 
 
 
