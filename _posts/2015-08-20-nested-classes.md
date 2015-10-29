@@ -238,7 +238,14 @@ class Outer {
 
 ### What a Method-Local Inner Object Can and Can't Do
  
+A method-local inner class can be instantiated only within the method where the inner class is defined. In other words,
+no other code running in any other method inside or outside the outer class can ever instantiate the method-local 
+inner class. 
 
-
-
+Can             |Cannot
+----------------|----------------
+Access private members of the outer/enclosing class. | Cannot use the local variables of the method the inner class is in.
+The only modifiers you can apply to a method-local inner class are abstract and final, but, as always, never both at the same time. | You can't mark a method-local inner class public, private, protected, static, transient (just like a variable).
+   
+                   
 
