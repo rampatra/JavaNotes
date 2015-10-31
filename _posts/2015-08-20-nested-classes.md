@@ -185,8 +185,7 @@ A regular inner class scoped inside another class's curly braces, but outside an
  same level that an instance variable is declared) is called a __method-local inner class__.
  
 {% highlight java linenos %}
-class Outer {
-    
+class Outer {    
     private String x = "Outer";
 
     void doStuff() {
@@ -198,10 +197,8 @@ class Outer {
             } // close inner class method
             
         } // close inner class definition
-        
-    } // close outer class method doStuff()
-
-} // close outer class
+    }
+}
 {% endhighlight %}
 
 In the above example, `class Inner` is the method-local inner class. But the inner class is useless because you are never 
@@ -212,8 +209,7 @@ use the inner class, you must make an instance of it somewhere within the method
 The following legal code shows how to instantiate and use a method-local inner class:
 
 {% highlight java linenos %}
-class Outer {
-    
+class Outer {    
     private String x = "Outer";
 
     void doStuff() {
@@ -230,10 +226,8 @@ class Outer {
             mi.seeOuter();
             
         } // close inner class definition
-        
-    } // close outer class method doStuff()
-
-} // close outer class
+    }
+}
 {% endhighlight %}
 
 ### What a Method-Local Inner Object Can and Can't Do
@@ -268,11 +262,12 @@ class MyOuter {
         class MyInner {
             public void seeOuter() {
                 System.out.println("Outer x is " + x);
-                System.out.println("Local var z is " + z); // won't compile, making 'z' final will solve the problem
-            } // close inner class method             
-        } // close inner class definition
-    } // close outer class method doStuff()
-} // close outer class
+                System.out.println("Local var z is " + z);  // won't compile, making 'z' final
+                                                            // will solve the problem
+            }            
+        } // close method-local inner class
+    }
+}
 {% endhighlight %}
 
 * A local class declared in a `static` method has access to only `static` members of the enclosing class, since there is no
