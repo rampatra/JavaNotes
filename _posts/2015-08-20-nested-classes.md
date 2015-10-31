@@ -35,7 +35,7 @@ These are just "regular" inner classes which are not method-local, anonymous or 
 Suppose you have an inner class like this:
 
 {% highlight java linenos %}
-public class MyOuter {
+class MyOuter {
     class MyInner { }
 }
 {% endhighlight %}
@@ -67,7 +67,7 @@ only at runtime, when there's already an instance of the outer class to tie the 
 Now with the basics done, let's see an inner class performing some actions:
 
 {% highlight java linenos %}
-public class MyOuter {
+class MyOuter {
     private int x = 7;
 
     // inner class definition
@@ -93,7 +93,7 @@ instance of the outer class__.
 #### Instantiating an Inner Class from Within the Outer Class
 
 {% highlight java linenos %}
-public class MyOuter {
+class MyOuter {
     private int x = 7;
 
     public void makeInner() {
@@ -152,7 +152,7 @@ since `this` always refers to the currently executing object. But when the inner
 to the outer class instance that the inner instance is tied to, it can access the outer class `this` like:
 
 {% highlight java linenos %}
-public class MyOuter {
+class MyOuter {
     private int x = 7;
 
     public void makeInner() {
