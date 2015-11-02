@@ -277,10 +277,11 @@ associated instance of the enclosing class. If you're in a `static` method, ther
 ## Anonymous Inner Classes
 
 Inner class declared without any class name at all is known as __Anonymous Inner Class__. These can be seen as two types:
-    1. Plain/Normal Anonymous Inner Class
-    2. Argument defined Anonymous Inner Class
 
-1. Plain/Normal Anonymous Inner Class also comes in two flavors:
+**I. Plain/Normal Anonymous Inner Class**  
+**II. Argument Defined Anonymous Inner Class**
+
+**I. Plain/Normal Anonymous Inner Class also comes in two flavors:**
 
 a. Flavor 1:
 
@@ -299,8 +300,8 @@ class Food {
 }
 {% endhighlight %}
 
-In the above code, the Popcorn reference variable __DOES NOT__ refer to an instance of Popcorn, but to an instance of an
-anonymous (unnamed) subclass of Popcorn.
+In the above code, the `Popcorn` reference variable __DOES NOT__ refer to an instance of `Popcorn`, but to an instance of an
+anonymous (unnamed) subclass of `Popcorn`.
    
                    
 
