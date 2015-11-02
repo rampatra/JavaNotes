@@ -278,12 +278,12 @@ associated instance of the enclosing class. If you're in a `static` method, ther
 
 Inner class declared without any class name at all is known as __Anonymous Inner Class__. These can be seen as two types:
 
-**I. Plain/Normal Anonymous Inner Class**  
-**II. Argument Defined Anonymous Inner Class**
+* Plain/Normal Anonymous Inner Class
+* Argument Defined Anonymous Inner Class
 
-**I. Plain/Normal Anonymous Inner Class also comes in two flavors:**
+**Plain/Normal Anonymous Inner Class also comes in two flavors:**
 
-a. Flavor 1:
+* Flavor 1:
 
 {% highlight java linenos %}
 class Popcorn {
