@@ -273,6 +273,16 @@ class MyOuter {
 * A local class declared in a `static` method has access to only `static` members of the enclosing class, since there is no
 associated instance of the enclosing class. If you're in a `static` method, there is no `this`, so an inner class in a 
 `static` method is subject to the same restrictions as the `static` method. In other words, no access to instance variables.
+
+## Anonymous Inner Classes
+
+Inner class declared without any class name at all is known as __Anonymous Inner Class__. These can be seen as two types:
+1. Plain/Normal Anonymous Inner Class
+2. Argument defined Anonymous Inner Class
+
+1. Plain/Normal Anonymous Inner Class also comes in two flavors:
+
+i. Flavor 1: 
    
                    
 
