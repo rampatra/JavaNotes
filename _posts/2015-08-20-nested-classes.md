@@ -277,12 +277,30 @@ associated instance of the enclosing class. If you're in a `static` method, ther
 ## Anonymous Inner Classes
 
 Inner class declared without any class name at all is known as __Anonymous Inner Class__. These can be seen as two types:
-1. Plain/Normal Anonymous Inner Class
-2. Argument defined Anonymous Inner Class
+    1. Plain/Normal Anonymous Inner Class
+    2. Argument defined Anonymous Inner Class
 
 1. Plain/Normal Anonymous Inner Class also comes in two flavors:
 
-i. Flavor 1: 
+a. Flavor 1:
+
+{% highlight java linenos %}
+class Popcorn {
+    public void pop() {
+        System.out.println("popcorn");
+    }
+}
+class Food {
+    Popcorn p = new Popcorn() {
+        public void pop() {
+            System.out.println("anonymous popcorn");
+        }
+    };
+}
+{% endhighlight %}
+
+In the above code, the Popcorn reference variable __DOES NOT__ refer to an instance of Popcorn, but to an instance of an
+anonymous (unnamed) subclass of Popcorn.
    
                    
 
