@@ -294,7 +294,10 @@ class Popcorn {
 class Food {
     Popcorn p = new Popcorn() {
         public void pop() {
-            System.out.println("anonymous popcorn");
+            System.out.println("this method overrides pop() in Popcorn class");
+        }
+        public void push() {
+            System.out.println("new method in anonymous inner class");
         }
     };
 }
@@ -306,7 +309,9 @@ of an anonymous (unnamed) subclass of `Popcorn`.
 __Polymorphism comes to play in Anonymous Inner Class__ as in the above example, we're using a superclass reference 
 variable type to refer to a subclass object. So, we need to keep in mind some points: 
    
-
+* You can only call methods on an anonymous inner class reference that are defined in the reference variable type. So,
+in the above code, you cannot call `p.push()` as `p` is a reference variable of type `Popcorn` and `Popcorn` class does 
+not have any method named `push()`.
 
                    
 
