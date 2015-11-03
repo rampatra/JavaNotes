@@ -307,11 +307,12 @@ In the above code, the `Popcorn` reference variable __DOES NOT__ refer to an ins
 of an anonymous (unnamed) subclass of `Popcorn`.
    
 __Polymorphism comes to play in Anonymous Inner Class__ as in the above example, we're using a superclass reference 
-variable type to refer to a subclass object. So, we need to keep in mind some points: 
-   
-* You can only call methods on an anonymous inner class reference that are defined in the reference variable type. So,
-in the above code, you cannot call `p.push()` as `p` is a reference variable of type `Popcorn` and `Popcorn` class does 
-not have any method named `push()`.
+variable type to refer to a subclass object. And when you call `p.pop()` then the `pop()` inside `Food` class will be
+called instead of the one in `Popcorn` class.
+
+But we need to keep one thing in mind, i.e, you can only call methods on an anonymous inner class reference that are 
+defined in the reference variable type. So, in the above code, you cannot call `p.push()` as `p` is a reference variable
+of type `Popcorn` and `Popcorn` class does not have any method named `push()`.
 
                    
 
