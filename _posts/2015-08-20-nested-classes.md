@@ -300,8 +300,13 @@ class Food {
 }
 {% endhighlight %}
 
-In the above code, the `Popcorn` reference variable __DOES NOT__ refer to an instance of `Popcorn`, but to an instance of an
-anonymous (unnamed) subclass of `Popcorn`.
+In the above code, the `Popcorn` reference variable __DOES NOT__ refer to an instance of `Popcorn`, but to an instance 
+of an anonymous (unnamed) subclass of `Popcorn`.
    
+__Polymorphism comes to play in Anonymous Inner Class__ as in the above example, we're using a superclass reference 
+variable type to refer to a subclass object. So, we need to keep in mind some points: 
+   
+
+
                    
 
