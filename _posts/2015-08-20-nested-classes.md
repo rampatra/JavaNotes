@@ -204,7 +204,8 @@ class Outer {
 In the above example, `class Inner` is the method-local inner class. But the inner class is useless because you are never 
 instantiating the inner class. Just because you declared the class doesn't mean you created an instance of it. So to 
 use the inner class, you must make an instance of it somewhere within the method but __below the inner class definition
-(or the compiler won't be able to find the inner class)__. 
+(or the compiler won't be able to find the inner class)__. You can even refer my 
+[Stackoverflow question](http://stackoverflow.com/questions/29620714/method-local-inner-class-vs-inner-class). 
 
 The following legal code shows how to instantiate and use a method-local inner class:
 
@@ -281,7 +282,7 @@ Inner class declared without any class name at all is known as __Anonymous Inner
 * Plain/Normal Anonymous Inner Class
 * Argument Defined Anonymous Inner Class
 
-**Plain/Normal Anonymous Inner Class also comes in two flavors:**
+### Plain/Normal Anonymous Inner Class also comes in two flavors:
 
 * Flavor 1:
 
@@ -303,8 +304,8 @@ class Food {
 }
 {% endhighlight %}
 
-In the above code, the `Popcorn` reference variable __DOES NOT__ refer to an instance of `Popcorn`, but to an instance 
-of an anonymous (unnamed) subclass of `Popcorn`.
+In the above code, the `Popcorn` reference variable __DOES NOT__ refer to an instance of `Popcorn`, but to an __instance 
+of an anonymous (unnamed) subclass of `Popcorn`__.
    
 __Polymorphism comes to play in Anonymous Inner Class__ as in the above example, we're using a superclass reference 
 variable type to refer to a subclass object. And when you call `p.pop()` then the `pop()` inside `Food` class will be
@@ -313,6 +314,45 @@ called instead of the one in `Popcorn` class.
 But we need to keep one thing in mind, i.e, you can only call methods on an anonymous inner class reference that are 
 defined in the reference variable type. So, in the above code, you cannot call `p.push()` as `p` is a reference variable
 of type `Popcorn` and `Popcorn` class does not have any method named `push()`.
+
+* Flavor 2:
+
+The only difference between flavor one and flavor two is that flavor one creates an anonymous subclass of the specified
+class type, whereas flavor two creates an __anonymous implementer of the specified interface type__.
+
+{% highlight java linenos %}
+interface Cookable {
+    public void cook();
+}
+
+class Food {
+    Cookable c = new Cookable() {
+        public void cook() {
+            System.out.println("anonymous cookable implementer");
+        }
+    };
+}
+{% endhighlight %}
+
+This is the only time you will ever see the syntax `new Cookable()` where `Cookable` is an interface rather than a 
+non-abstract class type. Think about it: You can't instantiate an interface, yet that's what the above code looks like 
+it's doing. But, of course, it's not instantiating a `Cookable` object, it's creating an instance of a new anonymous
+implementer of `Cookable`.
+
+#### Some obvious points:
+
+* Anonymous Inner Class can implement only one interface. There simply isn't any mechanism to say that your 
+anonymous inner class is going to implement multiple interfaces.
+* Anonymous Inner Class can't extend a class and implement an interface at the same time.
+* If the Anonymous Inner Class is a subclass of a class type, it automatically becomes an implementer of any
+interfaces implemented by the superclass.
+
+### Argument Defined Anonymous Inner Class
+
+
+
+
+
 
                    
 
