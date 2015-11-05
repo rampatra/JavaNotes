@@ -349,10 +349,32 @@ interfaces implemented by the superclass.
 
 ### Argument Defined Anonymous Inner Class
 
+Consider the below code:
 
+{% highlight java linenos %}
+class MyWonderfulClass {
+    void go() {        
+        Bar b = new Bar();
+        b.doStuff(new Foo() {
+            public void foof() {
+                System.out.println("foofy");
+            } // end foof method
+        }); // end inner class def, arg, and b.doStuff stmt.
+    } // end go()
+}
 
+interface Foo {
+    void foof();
+}
 
+class Bar {
+    void doStuff(Foo f) {
+    }
+}
+{% endhighlight %}
 
+The `doStuff(Foo f)` in `Bar` class takes an object of a class that implements `Foo` interface. So, we just passed an 
+anonymous class which is an implementation of the `Foo` interface as an argument to the `doStuff()` method (in line 4).
+This we call it as __Argument Defined Anonymous Class__.
 
-                   
 
