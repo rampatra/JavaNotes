@@ -377,4 +377,24 @@ The `doStuff(Foo f)` in `Bar` class takes an object of a class that implements `
 anonymous class which is an implementation of the `Foo` interface as an argument to the `doStuff()` method (in line 4).
 This we call it as __Argument Defined Anonymous Class__.
 
+Please note that argument defined anonymous class end like `});` but normal anonymous class end like `};`.
 
+## Static Nested Class
+
+Static Nested Classes are sometimes referred to as static inner classes, but they really aren't inner classes at all
+based on the standard definition of an inner class. While an inner class (regardless of the flavor) enjoys that special 
+relationship with the outer class (or rather, the instances of the two classes share a relationship), a static nested 
+class does not. It is simply __a non-inner (also called "top-level") class scoped within another__.
+
+So with static classes, it's really more about name-space resolution than about an implicit relationship between the 
+two classes. A static nested class is __simply a class that's a static member of the enclosing class__:
+
+{% highlight java %}
+class BigOuter {
+    static class Nested { }
+}
+{% endhighlight %}
+
+The class itself isn't really `static`; there's no such thing as a `static` class. The `static` modifier in this case says 
+that the nested class is a `static` member of the outer class. That means it can be accessed, as with other `static` 
+members, without having an instance of the outer class.
