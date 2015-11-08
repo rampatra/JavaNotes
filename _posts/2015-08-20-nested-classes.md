@@ -398,3 +398,29 @@ class BigOuter {
 The class itself isn't really "`static`", there's no such thing as a `static` class. The `static` modifier in this case says 
 that the nested class is a `static` member of the outer class. That means it can be accessed, as with other `static` 
 members, without having an instance of the outer class.
+
+{% highlight java linenos %}
+class Outer {
+    static class Nest {
+        void go() {
+            System.out.println("hi outer");
+        }
+    }
+}
+
+class Inner {
+    static class Nest {
+        void go() {
+            System.out.println("hi inner");
+        }
+    }
+
+    public static void main(String[] args) {
+        Outer.Nest outerNest = new Outer.Nest(); // access static inner class 
+        outerNest.go();                          // present inside a different class   
+        
+        Nest innerNest = new Nest(); // access static inner class
+        innerNest.go();              // present inside the same class
+    }
+}
+{% endhighlight %}
