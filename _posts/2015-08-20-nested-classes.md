@@ -424,3 +424,32 @@ class Inner {
     }
 }
 {% endhighlight %}
+
+{% include responsive_ad.html %}
+
+### Q&A
+
+__Q1.__ 
+
+{% highlight java linenos %}
+public class HorseTest {
+    public static void main(String[] args) {
+        class Horse {
+            public String name;
+            public Horse(String s) {
+                name = s;
+            }
+        }
+        Object obj = new Horse("Zippo");
+        System.out.println(obj.name);
+    }
+}
+{% endhighlight %}
+
+What is the result?
+
+A. An exception occurs at runtime at line 10  
+B. Zippo  
+C. Compilation fails because of an error on line 3  
+D. Compilation fails because of an error on line 9  
+E. Compilation fails because of an error on line 10  
