@@ -316,11 +316,11 @@ class Horse extends Animal {
 
 Figure out which version of `eat()` will run on each of the invocation made?
 
-    1. Animal ah = new Horse();
+    A. Animal ah = new Horse();
        ah.eat();
-    2. Horse he = new Horse();
+    B. Horse he = new Horse();
        he.eat("Apples");
-    3. Animal a2 = new Animal();
+    C. Animal a2 = new Animal();
        a2.eat("treats");
-    4. Animal ah2 = new Horse();
+    D. Animal ah2 = new Horse();
        ah2.eat("Carrots");

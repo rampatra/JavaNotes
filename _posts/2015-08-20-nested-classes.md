@@ -453,3 +453,84 @@ B. Zippo
 C. Compilation fails because of an error on line 3  
 D. Compilation fails because of an error on line 9  
 E. Compilation fails because of an error on line 10  
+
+__Q2.__
+
+{% highlight java linenos %}
+public abstract class AbstractTest {
+    public int getNum() {
+        return 45;
+    }
+
+    public abstract class Bar {
+        public int getNum() {
+            return 38;
+        }
+    }
+
+    public static void main(String[] args) {
+        AbstractTest t = new AbstractTest() {
+            public int getNum() {
+                return 22;
+            }
+        };
+        AbstractTest.Bar f = t.new Bar() {
+            public int getNum() {
+                return 57;
+            }
+        };
+        System.out.println(f.getNum() + " " + t.getNum());
+    }
+}
+{% endhighlight %}
+
+
+What is the output?
+
+A. 57 22   
+B. 45 38  
+C. 45 57  
+D. An exception occurs at runtime  
+E. Compilation fails
+
+__Q3.__
+
+{% highlight java linenos %}
+class A {
+    void m() {
+        System.out.println("outer");
+    }
+}
+
+public class MethodLocalVSInner {
+
+    public static void main(String[] args) {
+        new MethodLocalVSInner().go();
+    }
+
+    void go() {
+        new A().m();
+        class A {
+            void m() {
+                System.out.println("inner");
+            }
+        }
+    }
+
+    class A {
+        void m() {
+            System.out.println("middle");
+        }
+    }
+}
+{% endhighlight %}
+
+This is an interesting [question](http://stackoverflow.com/questions/29620714/method-local-inner-class-vs-inner-class),
+so think and tell what is the output?
+
+A. inner  
+B. outer  
+C. middle  
+D. Compilation fails  
+E. An exception is thrown at runtime
+
