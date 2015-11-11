@@ -12,8 +12,8 @@ __Github's Jekyll__.
 It attempts to demystify some of the most misunderstood concepts in **Java** which may confound
 even many experienced java programmers.
 
-In short, this blog is for those who have been coding in **Java** for a while (**and not for greenhorns**) who
-can **contribute** too by simply sending a pull request.
+This blog may not be the best for new learners (greenhorns) but may be worth a read for others who
+can **contribute** too by simply sending in a pull request.
 
 ### License
 GNU General Public License v2.0
