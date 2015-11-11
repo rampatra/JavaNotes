@@ -526,7 +526,7 @@ public class MethodLocalVSInner {
 {% endhighlight %}
 
 This is an interesting [question](http://stackoverflow.com/questions/29620714/method-local-inner-class-vs-inner-class),
-so think and tell what is the output?
+so think and determine the output?
 
 A. inner  
 B. outer  
