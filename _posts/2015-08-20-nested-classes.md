@@ -525,7 +525,7 @@ public class MethodLocalVSInner {
 }
 {% endhighlight %}
 
-This is an interesting [question](http://stackoverflow.com/questions/29620714/method-local-inner-class-vs-inner-class),
+This is an [interesting question](http://stackoverflow.com/questions/29620714/method-local-inner-class-vs-inner-class),
 so think and determine the output?
 
 A. inner  
@@ -533,4 +533,40 @@ B. outer
 C. middle  
 D. Compilation fails  
 E. An exception is thrown at runtime
+
+__Q4.__
+
+{% highlight java linenos %}
+class Car {
+    class Engine {
+        // insert code here
+    }
+
+    public static void main(String[] args) {
+        new Car().go();
+    }
+
+    void go() {
+        new Engine();
+    }
+
+    void drive() {
+        System.out.println("hi");
+    }
+}
+{% endhighlight %}
+
+Which, inserted independently at line 3, produce the output "hi"? (Choose all that apply.)
+
+A. { Car.drive(); }  
+B. { this.drive(); }  
+C. { Car.this.drive(); }  
+D. { this.Car.this.drive(); }  
+E. Engine() { Car.drive(); }  
+F. Engine() { this.drive(); }  
+G. Engine() { Car.this.drive(); }  
+
+__Q5.__
+
+
 
