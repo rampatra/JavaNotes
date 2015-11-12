@@ -568,5 +568,36 @@ G. Engine() { Car.this.drive(); }
 
 __Q5.__
 
+{% highlight java linenos %}
+class City {
+    class Manhattan {
+        void doStuff() throws Exception {
+            System.out.print("x ");
+        }
+    }
+
+    class TimesSquare extends Manhattan {
+        void doStuff() throws Exception {
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        new City().go();
+    }
+
+    void go() throws Exception {
+        new TimesSquare().doStuff();
+    }
+}
+{% endhighlight %}
+
+What is the result?
+
+A. x  
+B. xx  
+C. No output is produced  
+D. Compilation fails due to multiple errors  
+E. Compilation fails due only to an error on line 4  
+F. Compilation fails due only to an error on line 7
 
 
