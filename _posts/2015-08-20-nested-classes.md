@@ -170,12 +170,20 @@ class MyOuter {
 
     public static void main(String[] args) {
         MyOuter.MyInner inner = new MyOuter().new MyInner();
-        inner.seeOuter();
+        inner.seeOuter(); // works fine
+        System.out.println(inner.x); // compiler error as you can't directly
+                                     // access outer class member through a
+                                     // inner class reference (you can have 
+                                     // getter & setter in the inner class)
     }
 }
 {% endhighlight %}
 
-NOTE: Normally the inner class code doesn't need a reference to the outer class, since it already has an implicit one
+#### Some points to note
+
+* You can refer to this [StackOverflow question](http://stackoverflow.com/questions/12251922/i-thought-inner-classes-could-access-the-outer-class-variables-methods)
+to understand how you can and can't access outer class members from inner class.
+* Normally the inner class code doesn't need a reference to the outer class, since it already has an implicit one
 it's using to access the members of the outer class, it would need a reference to the outer class if it needed to pass
 that reference to some other code as in the above example.
 
@@ -205,7 +213,7 @@ In the above example, `class Inner` is the method-local inner class. But the inn
 instantiating the inner class. Just because you declared the class doesn't mean you created an instance of it. So to 
 use the inner class, you must make an instance of it somewhere within the method but __below the inner class definition
 (or the compiler won't be able to find the inner class)__. You can even refer my 
-[Stackoverflow question](http://stackoverflow.com/questions/29620714/method-local-inner-class-vs-inner-class). 
+[StackOverflow question](http://stackoverflow.com/questions/29620714/method-local-inner-class-vs-inner-class). 
 
 The following legal code shows how to instantiate and use a method-local inner class:
 
@@ -594,7 +602,7 @@ class City {
 What is the result?
 
 A. x  
-B. xx  
+B. x x  
 C. No output is produced  
 D. Compilation fails due to multiple errors  
 E. Compilation fails due only to an error on line 4  
