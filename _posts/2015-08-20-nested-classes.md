@@ -641,4 +641,39 @@ D. Compilation fails due to multiple errors
 E. Compilation fails due only to an error on line 4  
 F. Compilation fails due only to an error on line 5
 
+__Q7.__
+
+{% highlight java linenos %}
+import java.util.*;
+
+public class Pockets {
+    public static void main(String[] args) {
+        String[] sa = {"nickel", "button", "key", "lint"};
+        Sorter s = new Sorter();
+        for (String s2 : sa) System.out.print(s2 + " ");
+        Arrays.sort(sa, s);
+        System.out.println();
+        for (String s2 : sa) System.out.print(s2 + " ");
+    }
+
+    class Sorter implements Comparator<String> {
+        public int compare(String a, String b) {
+            return b.compareTo(a);
+        }
+    }
+}
+{% endhighlight %}
+
+What is the output of the above program?
+
+A. Compilation fails  
+B. button key lint nickel  
+   nickel lint key button  
+C. nickel button key lint  
+   button key lint nickel  
+D. nickel button key lint  
+   nickel button key lint  
+E. nickel button key lint  
+   nickel lint key button  
+F. An exception is thrown at runtime
 
