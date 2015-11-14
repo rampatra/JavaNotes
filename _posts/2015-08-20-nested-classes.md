@@ -608,4 +608,37 @@ D. Compilation fails due to multiple errors
 E. Compilation fails due only to an error on line 4  
 F. Compilation fails due only to an error on line 7
 
+__Q6.__
+
+{% highlight java linenos %}
+class OuterClassAccess {
+    private int size = 7;
+    private static int length = 3;
+
+    public static void main(String[] args) {
+        new OuterClassAccess().go();
+    }
+
+    void go() {
+        int size = 5;
+        System.out.println(new Inner().adder());
+    }
+
+    class Inner {
+        int adder() {
+            return size * length; // inner class can access static members of outer class
+        }
+    }
+}
+{% endhighlight %}
+
+What is the result?
+
+A. 15  
+B. 21  
+C. An exception is thrown at runtime  
+D. Compilation fails due to multiple errors  
+E. Compilation fails due only to an error on line 4  
+F. Compilation fails due only to an error on line 5
+
 
