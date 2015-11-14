@@ -664,7 +664,7 @@ public class Pockets {
 }
 {% endhighlight %}
 
-What is the output of the above program?
+What is the result?
 
 A. Compilation fails  
 B. button key lint nickel  
