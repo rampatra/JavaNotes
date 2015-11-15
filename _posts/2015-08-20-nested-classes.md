@@ -80,9 +80,9 @@ class MyOuter {
 {% endhighlight %}
 
 The output of the above program would be `Outer x is 7`. This happens because an __inner class can access private members
-of its outer class__. The inner class is also a member of the outer class. So just as any member of the outer class (say, 
-an instance method) can access any other member of the outer class, private or not, the inner class (also a member) can do
-the same.
+of its outer class even those which are declared as `static`__. The inner class is also a member of the outer class. So 
+just as any member of the outer class (say, an instance method) can access any other member of the outer class, private
+or not, the inner class (also a member) can do the same.
 
 ### Instantiate the inner class
 
@@ -110,7 +110,7 @@ class MyOuter {
 {% endhighlight %}
 
 The reason the above syntax works is because the outer class instance method code is doing the instantiating. In other
-words, there's already an instance of the outer class—the instance running the makeInner() method.
+words, there's already an instance of the outer class i.e, the instance running the makeInner() method.
 
 #### Instantiating an Inner Class from Outside the Outer Class Instance Code
 
@@ -149,7 +149,7 @@ public void myMethod() {
 
 So within an inner class code, the `this` reference refers to the instance of the inner class, as you'd probably expect, 
 since `this` always refers to the currently executing object. But when the inner class code wants an explicit reference 
-to the outer class instance that the inner instance is tied to, it can access the outer class `this` like:
+to the outer class instance that the inner instance is tied to, it can access the outer class `this` like shown below:
 
 {% highlight java linenos %}
 class MyOuter {
@@ -183,6 +183,7 @@ class MyOuter {
 
 * You can refer to this [StackOverflow question](http://stackoverflow.com/questions/12251922/i-thought-inner-classes-could-access-the-outer-class-variables-methods)
 to understand how you can and can't access outer class members from inner class.
+* Inner class can access __private members__ of the outer enclosing class even those __which are declared `static`__.
 * Normally the inner class code doesn't need a reference to the outer class, since it already has an implicit one
 it's using to access the members of the outer class, it would need a reference to the outer class if it needed to pass
 that reference to some other code as in the above example.
