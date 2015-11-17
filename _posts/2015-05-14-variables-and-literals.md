@@ -1,0 +1,82 @@
+---
+layout: post
+title: Variables and Literals
+---
+
+Variables can be broadly classified in to 2 types in Java:
+
+1. __Instance__ variables (declared in a class).
+2. __Local__ variables (declared inside a method).
+
+Instance variables and objects reside in heap whereas local variables reside in stack. Consider the below program:
+
+{% highlight java linenos %}
+class Collar {
+}
+
+class Dog {
+    Collar c; // instance variable
+    String name; // instance variable
+
+    public static void main(String[] args) {
+        Dog d; // local variable: d
+        d = new Dog();
+        d.go(d);
+    }
+
+    void go(Dog dog) { // local variable: dog
+        c = new Collar();
+        dog.setName("Aiko");
+    }
+
+    void setName(String dogName) { // local var: dogName
+        name = dogName;
+        // do more stuff
+    }
+}
+{% endhighlight %}
+
+For the above program, the instance variables, objects and local variables will be stored in memory as shown in the 
+figure below:
+
+![](/img/posts/variables.png)
+
+### Literal Values for All Primitive Types
+
+A __primitive literal__ is merely a source code representation of the primitive data types—in other words, an integer, 
+floating-point number, boolean, or character that you type in while writing code. The following are examples of
+primitive literals:
+
+{% highlight java %}
+'b'          // char literal
+42           // int literal
+false        // boolean literal
+2546789.343  // double literal
+{% endhighlight %}
+
+**Integer Literal**
+
+There are four ways to represent integer numbers in the Java language: decimal (base 10), octal (base 8),
+hexadecimal (base 16), and from Java 7, binary (base 2).
+ 
+One more new feature introduced in Java 7 was __numeric literals with underscores (_) characters__. This was introduced
+to increase readability. See below:
+
+{% highlight java %}
+int pre7 = 1000000;     // pre Java 7 – we hope it's a million
+int with7 = 1_000_000;  // much clearer!
+{% endhighlight %}
+
+But you must keep in mind the below gotchas:
+{% highlight java %}
+int i1 = _1_000_000; // illegal, can't begin with an "_" 
+int i2 = 10_0000_0;  // legal, but confusing
+{% endhighlight %}
+
+
+
+
+
+
+
+
