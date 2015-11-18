@@ -43,18 +43,22 @@ figure below:
 
 ### Literal Values for All Primitive Types
 
-A __primitive literal__ is merely a source code representation of the primitive data types—in other words, an integer, 
-floating-point number, boolean, or character that you type in while writing code. The following are examples of
+A __primitive literal__ is merely a source code representation of the primitive data types, in other words, an integer, 
+floating-point number, boolean, or character etc. that you type in while writing code. The following are examples of
 primitive literals:
 
 {% highlight java %}
-'b'          // char literal
-42           // int literal
-false        // boolean literal
+127          // byte literal
+376          // short literal
+4290         // int literal
+58L          // long literal
+2546.343f    // float literal
 2546789.343  // double literal
+'b'          // char literal
+false        // boolean literal
 {% endhighlight %}
 
-**Integer Literal**
+####Integer Literals
 
 There are four ways to represent integer numbers in the Java language: decimal (base 10), octal (base 8),
 hexadecimal (base 16), and from Java 7, binary (base 2).
@@ -72,6 +76,13 @@ But you must keep in mind the below gotchas:
 int i1 = _1_000_000; // illegal, can't begin with an "_" 
 int i2 = 10_0000_0;  // legal, but confusing
 {% endhighlight %}
+
+NOTE: You can use the underscore character for any of the numeric types (including doubles and floats), but for
+doubles and floats, you CANNOT add an underscore character directly next to the decimal point.
+
+**Decimal Literals**
+
+
 
 
 
