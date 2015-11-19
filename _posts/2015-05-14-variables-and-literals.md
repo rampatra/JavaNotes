@@ -82,17 +82,48 @@ doubles and floats, you CANNOT add an underscore character directly next to the 
 
 **Decimal Literals**
 
+These are numbers with a radix of 10 which we use most commonly. They do not need prefix of any kind and are initialized
+as below:
 
+{% highlight java %}
+int length = 343;
+{% endhighlight %}
 
 **Binary Literals**
 
-From Java 7, you can initialize variables holding binary literals. But they must start with either 0B or 0b, as shown 
+From Java 7, you can initialize variables holding binary literals. But they must start with either `0B` or `0b`, as shown 
 below:
 
 {% highlight java %}
 int b1 = 0B101010;   // set b1 to binary 101010 (decimal 42)
 int b2 = 0b00011;    // set b2 to binary 11 (decimal 3)
 {% endhighlight %}
+
+**Octal Literals**
+
+Octal integers use only the digits 0 to 7. They have a radix of 8. In Java, you represent an integer in octal form by 
+placing a zero in front of the number, as follows:
+
+{% highlight java %}
+int six = 06;     // Equal to decimal 6
+int seven = 07;   // Equal to decimal 7
+int eight = 010;  // Equal to decimal 8
+int nine = 011;   // Equal to decimal 9
+{% endhighlight %}
+
+You can have up to 21 digits in an octal number, not including the leading zero. This is because no mater what number
+system you use, the range of values that an `int` can hold is always between $$ -2^31 to +2^31-1 $$.
+
+**Hexadecimal Literals**
+
+
+
+
+
+#### Floating-point Literals
+
+
+
 
 
 
