@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Variables and Literals
+published: false
 ---
 
 Variables can be broadly classified in to 2 types in Java:
