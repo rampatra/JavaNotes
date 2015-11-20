@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Variables and Literals
-published: false
+published: true
 ---
 
 Variables can be broadly classified in to 2 types in Java:
@@ -106,20 +106,40 @@ Octal integers use only the digits 0 to 7. They have a radix of 8. In Java, you 
 placing a zero in front of the number, as follows:
 
 {% highlight java %}
-int six = 06;     // Equal to decimal 6
-int seven = 07;   // Equal to decimal 7
-int eight = 010;  // Equal to decimal 8
-int nine = 011;   // Equal to decimal 9
+int six = 06;     // equal to decimal 6
+int seven = 07;   // equal to decimal 7
+int eight = 010;  // equal to decimal 8
+int nine = 011;   // equal to decimal 9
 {% endhighlight %}
 
 You can have up to 21 digits in an octal number, not including the leading zero. This is because no mater what number
-system you use, the range of values that an `int` can hold is always between $$ -2^31 to +2^31-1 $$.
+system you use, the range of values that an `int` can hold is always between $$ -2^{31} $$ to $$ +2^{31}-1 $$.
 
 **Hexadecimal Literals**
 
+Hexadecimal (hex for short) numbers are constructed using 16 distinct symbols. They have a radix of 16. Counting from 
+0 through 15 in hex looks like this:
 
+{% highlight java %}
+0 1 2 3 4 5 6 7 8 9 a b c d e f
+{% endhighlight %}
 
+Java accepts uppercase or lowercase letters for the extra digits _(one of the few places Java is not case-sensitive)_.
+You represent an integer in hexadecimal form by placing a `0x` in front of the number, as follows:
 
+{% highlight java %}
+int x = 0X0001;     // equals to decimal 1
+int y = 0x7fffffff; // equals to decimal 2147483647
+int z = 0xDeadCafe; // equals to decimal -559035650
+{% endhighlight %}
+
+All four integer literals (binary, octal, decimal, and hexadecimal) are defined as `int` by default, but they may also
+be specified as `long` by placing a suffix of `L` or `l` after the number:
+
+{% highlight java %}
+long jo = 110599L;
+long so = 0xFFFFl;  // Note the lowercase 'l'
+{% endhighlight %}
 
 #### Floating-point Literals
 
