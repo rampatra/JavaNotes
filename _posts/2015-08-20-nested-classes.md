@@ -627,7 +627,7 @@ class OuterClassAccess {
 
     class Inner {
         int adder() {
-            return size * length; // inner class can access static members of outer class
+            return size * length;
         }
     }
 }
