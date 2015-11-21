@@ -87,7 +87,7 @@ These are numbers with a radix of 10 which we use most commonly. They do not nee
 as below:
 
 {% highlight java %}
-int length = 343;
+int length = 343; // 343 is the literal
 {% endhighlight %}
 
 **Binary Literals**
@@ -143,16 +143,41 @@ long so = 0xFFFFl;  // Note the lowercase 'l'
 
 #### Floating-point Literals
 
+Floating-point numbers are defined as a number, a decimal symbol, and more numbers representing the fraction. For
+example,
+
+{% highlight java %}
+double d = 11301874.9881024;
+{% endhighlight %}
+
+By default, floating-point literals are defined as `double` (64 bits) so if you want to assign a floating-point literal
+to a variable of type `float` (32 bits), you must attach the suffix `F` or `f` to the number. So, the below code 
+generates a compiler error:
+
+{% highlight java %}
+float f = 23.467890;    // Compiler error, possible loss
+                        // of precision
+{% endhighlight %}
+
+This happens because we're trying to fit a larger number (64 bits) into a (potentially) less precise "container" 
+(32 bits).
+
+Now as by default floating-point literals are of type `double`, it is optional to attach a suffix of `D` or `d` when you
+want to assign it to a variable of type `double`. For example,
+
+{% highlight java %}
+double d = 110599.995011D; // Optional, not required
+double  g = 987.897;       // No 'D' suffix, but OK because the
+                           // literal is a double by default
+{% endhighlight %}
+
+#### Boolean Literals
 
 
 
+#### Character Literals
 
 
 
-
-
-
-
-
-
+#### String Literals
 
