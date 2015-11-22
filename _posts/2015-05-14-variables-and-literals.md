@@ -173,11 +173,47 @@ double  g = 987.897;       // No 'D' suffix, but OK because the
 
 #### Boolean Literals
 
+Boolean literals can be either `true` or `false`. In C (and some other languages) it is common to use numbers to 
+represent true or false, but this will not work in Java. For example,
 
+{% highlight java %}
+boolean t = true;  // Legal
+boolean  f = 0;    // Compiler error!
+int x = 1;  if (x) { } // Compiler error!
+{% endhighlight %}
 
 #### Character Literals
 
+A char literal is represented by a single character in __single quotes__: 
 
+{% highlight java %}
+char a = 'a';
+char b = '@';
+{% endhighlight %}
+
+You can also assign unicode value to a `char` variable, like:
+
+{% highlight java %}
+char letterN = '\u004E'; // The letter 'N'
+{% endhighlight %}
+
+Note, characters are nothing but __16-bit unsigned integers__. So, you can assign a number literal, assuming it will fit 
+into the unsigned 16-bit range (0 to 65535) to a `char` variable. For example, the following are all __legal__:
+
+{% highlight java %}
+char a = 0x892;        // hexadecimal literal
+char b = 982;          // int literal
+char c = (char)70000;  // The cast is required; 70000 is
+                       // out of char range
+char d = (char) -98;   // Ridiculous, but legal
+{% endhighlight %}
+
+And the following are __not legal__ and produce compiler errors:
+
+{% highlight java %}
+char e = -29;    // Possible loss of precision; needs a cast
+char f = 70000;  // Possible loss of precision; needs a cast
+{% endhighlight %}
 
 #### String Literals
 
