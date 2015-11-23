@@ -4,10 +4,13 @@ title: Variables and Literals
 published: true
 ---
 
-Variables can be broadly classified in to 2 types in Java:
+Variables are devices that are used to store data, such as a number, or a string of character data so that we can 
+manipulate them later in our program. Variables can be broadly classified in to 4 types in Java:
 
-1. __Instance__ variables (declared in a class).
-2. __Local__ variables (declared inside a method).
+1. __Instance__ variables (non-static, declared in a class).
+2. __Class__ variables (static, declared in a class).
+3. __Local__ variables (declared inside a method).
+4. __Parameters__ (variables in a method signature).
 
 Instance variables and objects reside in heap whereas local variables reside in stack. Consider the below program:
 
@@ -215,5 +218,21 @@ char e = -29;    // Possible loss of precision; needs a cast
 char f = 70000;  // Possible loss of precision; needs a cast
 {% endhighlight %}
 
-#### String Literals
+#### Literal values for Strings
+
+You can create a `String` in Java in the following ways:
+
+{% highlight java %}
+String s = "tutorial";
+String str = new String("Rahul roy");
+String con = s + str; // concatenate 2 strings
+{% endhighlight %}
+
+Strings are __not primitives__ in Java but can be represented as literals, in other words, they can be typed directly
+into code like:
+
+{% highlight java %}
+System.out.println("Bill" + " Joy");
+{% endhighlight %}
+
 
