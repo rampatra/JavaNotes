@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Variables and Literals
-published: true
 ---
 
 Variables are devices that are used to store data, such as a number, or a string of character data so that we can 
@@ -234,5 +233,11 @@ into code like:
 {% highlight java %}
 System.out.println("Bill" + " Joy");
 {% endhighlight %}
+
+### Literal values for Non-primitives
+
+Variables are just bit holders, with a designated type. You can have an `int` holder, a `double` holder, a `long` holder,
+and even a `String[]` holder. This holder is assigned a bunch of bits representing the value. For primitives, the bits 
+represent __a numeric value__ but for non-primitives, these bits represent __a way to get to the object__. 
 
 
