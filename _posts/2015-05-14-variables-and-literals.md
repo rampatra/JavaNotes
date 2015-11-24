@@ -234,10 +234,19 @@ into code like:
 System.out.println("Bill" + " Joy");
 {% endhighlight %}
 
-### Literal values for Non-primitives
+### Literal values for Non-Primitives
 
 Variables are just bit holders, with a designated type. You can have an `int` holder, a `double` holder, a `long` holder,
 and even a `String[]` holder. This holder is assigned a bunch of bits representing the value. For primitives, the bits 
 represent __a numeric value__ but for non-primitives, these bits represent __a way to get to the object__. 
+
+For example, a `byte` with a value of `6` means that the bit pattern in the variable (the `byte` holder) is `00000110`,
+representing the 8 bits. But what happens in case of non-primitives, for example, `Button b = new Button();`, what's 
+inside the `Button` holder `b`? Is it the Button object? No! A variable referring to an object is just a reference 
+variable. A __reference variable__ bit holder contains __bits representing a way to get to the object__. We don't know 
+what the format is. The way in which object references are stored is virtual-machine specific (it's a pointer to 
+something, we just don't know what that something really is). All we can say for sure is that the variable's value is 
+not the object, but rather a value representing a specific object on the heap. Or `null`. When it is `null`, i.e, 
+`Button b = null;` you can say that the reference variable `b` is not referring to any object.
 
 
