@@ -252,8 +252,14 @@ not the object, but rather a value representing a specific object on the heap. O
 ### Casting
 
 __Casting__ is a way of converting literal values/objects from one type to another. When the type of variable is 
-__different__ from the type of literal/object it's holding/referring, you may require __casting__. Casting can be done
-by the compiler _(implicit cast)_ or by you _(explicit cast)_.
+__different__ from the type of literal/object it's holding/referring, you may require __casting__. 
+
+Casting can be done by the compiler _(implicit cast)_ or by you _(explicit cast)_. Typically, an implicit cast happens 
+when you're doing a __widening conversion__, in other words, putting a smaller thing (say, a byte) into a bigger container 
+(such as an int). But when you try to put a large value into a small container (referred to as __narrowing__), you should 
+do an explicit cast, where you tell the compiler that you're aware of the danger and accept full responsibility.
+
+
 
 
 
