@@ -249,4 +249,11 @@ something, we just don't know what that something really is). All we can say for
 not the object, but rather a value representing a specific object on the heap. Or `null`. When it is `null`, i.e, 
 `Button b = null;` you can say that the reference variable `b` is not referring to any object.
 
+### Casting
+
+__Casting__ is a way of converting literal values/objects from one type to another. When the type of variable is 
+__different__ from the type of literal/object it's holding/referring, you may require __casting__. Casting can be done
+by the compiler _(implicit cast)_ or by you _(explicit cast)_.
+
+
 
