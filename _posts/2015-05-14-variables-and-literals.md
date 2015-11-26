@@ -257,7 +257,52 @@ __different__ from the type of literal/object it's holding/referring, you may re
 Casting can be done by the compiler _(implicit cast)_ or by you _(explicit cast)_. Typically, an implicit cast happens 
 when you're doing a __widening conversion__, in other words, putting a smaller thing (say, a byte) into a bigger container 
 (such as an int). But when you try to put a large value into a small container (referred to as __narrowing__), you should 
-do an explicit cast, where you tell the compiler that you're aware of the danger and accept full responsibility.
+do an explicit cast, where you tell the compiler that you're aware of the danger and accept full responsibility. Let's
+for example consider the below program:
+
+{% highlight java linenos %}
+class Casting {
+    public static void main(String [] args) {
+        long a = 100;   // literal '100' is implicitly an 'int' 
+                        //but the compiler does an implicit cast
+        int b = (int) 10.23;    // literal '10.23' is implicitly a 'double'
+                                // so we require an explicit cast
+        int x = 3957.229;   // illegal, can't store a large value in a 
+                            // small container without explicit cast
+    }
+}
+{% endhighlight %}
+
+There is another rule which you must be aware of, i.e, __the result of an expression involving anything int-sized or 
+smaller is always an `int`__. Check this out:
+
+{% highlight java %}
+byte a = 3;     // No problem, 3 fits in a byte
+byte b = 8;     // No problem, 8 fits in a byte
+byte c = a + b; // Should be no problem, sum of the two bytes
+                // fits in a byte
+{% endhighlight %}
+
+The last line won't compile! You'll get an error like this:
+
+{% highlight java %}
+TestBytes.java:5: possible loss of precision
+found   : int
+required: byte
+byte c = a + b;
+           ^ 
+{% endhighlight %}
+
+Doing an explicit cast like:
+
+{% highlight java %}
+byte c = (byte) (a + b);
+{% endhighlight %}
+
+solves the issue.
+
+#### What happens when you cast a large value to store it in a small container
+
 
 
 
