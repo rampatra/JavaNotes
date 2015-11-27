@@ -303,8 +303,27 @@ solves the issue.
 
 #### What happens when you cast a large value to store it in a small container
 
+When you do a explicit cast, the compiler just keeps __the number of bits (from right)__ that the variable type can hold 
+and strips off the rest. Consider the below program to understand better:
 
+{% highlight java linenos %}
+class Casting {
+    public static void main(String [] args) {
+        int i = 7;
+        byte b = (byte) i;
+        System.out.println("The 1st byte is " + b); // prints 7
+        // now let's see another example
+        int i = 128;
+        byte b = (byte) i;
+        System.out.println("The 2nd byte is " + b); // prints -128
+    }
+}
+{% endhighlight %}
 
-
+So, in line 4, `i` is `7` i.e, `00000000000000000000000000000111` (32 bits) and when we do a explicit cast, the compiler
+just stores `00000111` (8 bits) in variable `b` (as `byte` can hold only 8 bits) which is also `7`. Therefore, it prints
+`7`. But in line 8, `i` is `128` i.e, `00000000000000000000000010000000` and after stripping off the extra bits we are
+left with `10000000` which is not `128` as the 1st bit is the sign bit. So, after computing the 2's compliment of it we 
+get `-128` as the result.
 
 
