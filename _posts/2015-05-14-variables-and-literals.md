@@ -273,8 +273,10 @@ class Casting {
 }
 {% endhighlight %}
 
-There is another rule which you must be aware of, i.e, __the result of an expression involving anything int-sized or 
-smaller is always an `int`__. Check this out:
+#### There are some rules which you must be aware of:
+
+* The result of an expression involving anything int-sized or smaller is always an `int`, so we must explicitly cast 
+it. Check this out:
 
 {% highlight java %}
 byte a = 3;     // No problem, 3 fits in a byte
@@ -300,6 +302,13 @@ byte c = (byte) (a + b);
 {% endhighlight %}
 
 solves the issue.
+
+* In case of compound assignment operators, explicit cast isn't required. The below code compiles just fine:
+
+{% highlight java %}
+byte b = 3;
+b += 7; // No problem - adds 7 to b (result is 10)
+{% endhighlight %}
 
 #### What happens when you cast a large value to store it in a small container
 
