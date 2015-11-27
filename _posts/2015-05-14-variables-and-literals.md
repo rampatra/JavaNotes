@@ -336,3 +336,10 @@ left with `10000000` which is not `128` as the 1st bit is the sign bit. So, afte
 get `-128` as the result.
 
 
+
+
+{% include responsive_ad.html %}
+
+### Q&A
+
+__Q1.__
