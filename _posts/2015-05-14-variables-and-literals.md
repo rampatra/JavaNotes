@@ -249,6 +249,34 @@ something, we just don't know what that something really is). All we can say for
 not the object, but rather a value representing a specific object on the heap. Or `null`. When it is `null`, i.e, 
 `Button b = null;` you can say that the reference variable `b` is not referring to any object.
 
+There is one important concept to understand here, i.e, a reference variable can refer to any object that is a 
+__subclass__ of the declared reference variable type but not a __superclass__. Let's see why.
+
+{% highlight java linenos%}
+class Foo {
+    public void doFooStuff() { }
+}
+class Bar extends Foo {
+    public void doBarStuff() { }
+}
+class Test {
+    public static void main (String [] args) {
+    Foo reallyABar = new Bar();  // Legal because Bar is a
+                                 // subclass of Foo
+    Bar reallyAFoo = new Foo();  // Compiler error! Foo is not a
+                                 // subclass of Bar
+    }
+}
+{% endhighlight %}
+
+In line 11, `reallyAFoo` is a `Bar` reference variable (child) so someone would call `reallyAFoo.doBarStuff()` but the
+reference variable actually holds a `Foo` object (parent) which doesn't have a `doBarStuff()` method. So, the compiler 
+prevents this and gives a `Incompatible types` error.
+
+In other words, a child class is nothing but the parent class with additional properties. So there is no issue in line 9,
+where a `Foo` reference variable (parent) is holding a `Bar` object (child). Because everything a `Foo` object can do, 
+can also be done by a `Bar` object.
+
 ### Casting
 
 __Casting__ is a way of converting literal values/objects from one type to another. When the type of variable is 
