@@ -6,10 +6,10 @@ title: Variables and Literals
 Variables are devices that are used to store data, such as a number, or a string of character data so that we can 
 manipulate them later in our program. Variables can be broadly classified in to 4 types in Java:
 
-1. __Instance__ variables (non-static, declared in a class).
-2. __Class__ variables (static, declared in a class).
+1. __Class__ variables (static, declared in a class).
+2. __Instance__ variables (non-static, declared in a class).
 3. __Local__ variables (declared inside a method).
-4. __Parameters__ (variables in a method signature).
+4. __Block__ variables (variables in static blocks, for-loop blocks etc).
 
 Instance variables and objects reside in heap whereas local variables reside in stack. Consider the below program:
 
@@ -363,8 +363,18 @@ just stores `00000111` (8 bits) in variable `b` (as `byte` can hold only 8 bits)
 left with `10000000` which is not `128` as the 1st bit is the sign bit. So, after computing the 2's compliment of it we 
 get `-128` as the result.
 
+### Scope
 
+Scope refers to the __lifetime and accessibility of a variable__. In simple words, how long will the variable be hanging
+around so that they can be used by other parts of the program. Different types of variables have different scope.
 
+1. __Class or static__ variables have the longest scope. They are created when the class is loaded, and they survive as
+long as the class stays loaded in the Java Virtual Machine (JVM).
+2. __Instance or non-static__ variables are the next most long-lived. They are created when a new instance is created, 
+and they live until the instance is removed.
+3. __Local__ variables are next. They live as long as their method remains on the stack. As we'll soon see, however, 
+local variables can be alive and still be "out of scope."
+4. __Block__ variables live only as long as the code block is executing.
 
 {% include responsive_ad.html %}
 
