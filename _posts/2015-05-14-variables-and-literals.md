@@ -373,11 +373,33 @@ long as the class stays loaded in the Java Virtual Machine (JVM).
 2. __Instance or non-static__ variables are the next most long-lived. They are created when a new instance is created, 
 and they live until the instance is removed.
 3. __Local__ variables are next. They live as long as their method remains on the stack. As we'll soon see, however, 
-local variables can be alive and still be "out of scope."
+local variables can be alive and still be "out of scope".
 4. __Block__ variables live only as long as the code block is executing.
+
+
+
+
 
 {% include responsive_ad.html %}
 
 ### Q&A
 
-__Q1.__
+__Q1.__ 
+{% highlight java linenos %}
+public class Fishing {
+     byte b1 = 4;
+     int i1 = 123456;      
+     long L1 = (long)i1; // line A
+     short s2 = (short)i1; // line B
+     byte b2 = (byte)i1; // line C
+     int i2 = (int)123.456; // line D
+     byte b3 = b1 + 7; // line E
+}
+{% endhighlight %}
+
+Which lines WILL NOT compile? (Choose all that apply.)
+A. Line A
+B. Line B
+C. Line C
+D. Line D
+E. Line E
