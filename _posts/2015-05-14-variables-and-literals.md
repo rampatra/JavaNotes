@@ -376,7 +376,42 @@ and they live until the instance is removed.
 local variables can be alive and still be "out of scope".
 4. __Block__ variables live only as long as the code block is executing.
 
+Below program shows all types of variables and explains their scopes too. Please refer to the comments to understand which
+are __in scope__ and which are __out of scope__.
 
+{% highlight java linenos %}
+class Scope {
+    static int s = 343; // static variable
+    int x; // instance variable
+
+    { // initialization block
+        x = 7;
+        int x2 = 5; // block variable
+    }
+
+    Scope() { // constructor
+        x += 8;
+        int x3 = 6;
+    }
+
+    void doStuff() { // method
+        int y = 0; // local variable
+        for (int z = 0; z < 4; z++) { // 'for' code block
+            y += z + x;
+        }
+        z++; // compiler error (out of scope)
+        x2++; // compiler error (out of scope)   
+    }
+
+    public static void main(String[] a) {
+        x++; // compiler error! 'x' is instance variable, so 
+             // we need an object to access it
+        x2++; x3++; // compiler error! block variables scope
+                    // is only inside the block in which they
+                    // are declared
+    }
+}
+{% endhighlight %}
 
 
 
