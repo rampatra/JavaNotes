@@ -413,7 +413,22 @@ class Scope {
 }
 {% endhighlight %}
 
+### Variable Initialization
 
+Java gives us the option of initializing a declared variable or leaving it uninitialized. When we attempt to use 
+the uninitialized variable, we can get different behavior depending on __what type of variable or array we are dealing
+with (primitives or objects)__. The behavior also depends on __the level (scope) at which we are declaring our 
+variable__.
+
+Default values for Instance variables (Primitive and Non-primitive):
+
+Variable Type | Default Value
+--------------|----------------
+`byte`, `short`, `int`, `long` | `0`
+`float`, `double` | `0.0`
+`boolean` | `false`
+`char` | `'\u0000'`
+Object reference | `null` (not referencing any object)
 
 {% include responsive_ad.html %}
 
