@@ -420,7 +420,7 @@ the uninitialized variable, we can get different behavior depending on __what ty
 with (primitives or objects)__. The behavior also depends on __the level (scope) at which we are declaring our 
 variable__.
 
-Default values for Instance variables (Primitive and Non-primitive):
+#### Default values for Instance variables (Primitive and Non-primitive):
 
 Variable Type | Default Value
 --------------|----------------
@@ -429,6 +429,41 @@ Variable Type | Default Value
 `boolean` | `false`
 `char` | `'\u0000'`
 Object reference | `null` (not referencing any object)
+
+Therefore, for the below program:
+
+{% highlight java linenos %}
+public class Book {
+    private String title;       // instance reference variable
+    private int noOfPages;      // instance primitive variable
+    public String getTitle() {
+        return title;
+    }
+    public int getNoOfPages() {
+            return noOfPages;
+    }
+    public static void main(String [] args) {
+        Book b = new Book();
+        System.out.println("The title is " + b.getTitle());
+        System.out.println("No. of pages are " + b.getNoOfPages());
+    } 
+}
+{% endhighlight %}
+
+The output will be:
+`The title is null`
+`No. of pages are 0`
+
+__NOTE:__ `null` is not the same as an empty `String ("")`. A `null` value means the reference variable is not referring
+to any object on the heap.
+
+#### Array Instance Variable
+
+
+
+#### Default values for Local (also called Stack or Automatic) variables (Primitive and Non-primitive):
+
+
 
 {% include responsive_ad.html %}
 
