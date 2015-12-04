@@ -501,3 +501,40 @@ B. Line B
 C. Line C
 D. Line D
 E. Line E
+
+__Q2.__
+
+{% highlight java linenos %}
+class Mixer {
+    Mixer() {
+    }
+
+    Mixer(Mixer m) {
+        m1 = m;
+    }
+
+    Mixer m1;
+
+    public static void main(String[] args) {
+        Mixer m2 = new Mixer();
+        Mixer m3 = new Mixer(m2);
+        m3.go();
+        Mixer m4 = m3.m1;
+        m4.go();
+        Mixer m5 = m2.m1;
+        m5.go();
+    }
+
+    void go() {
+        System.out.print("hi ");
+    }
+}
+{% endhighlight %}
+
+What is the result?
+A. hi  
+B. hi hi  
+C. hi hi hi  
+D. Compilation fails  
+E. hi, followed by an exception  
+F. hi hi, followed by an exception
