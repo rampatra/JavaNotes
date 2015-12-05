@@ -482,7 +482,8 @@ explicitly initialize them with a value.
 
 ### Q&A
 
-__Q1.__ 
+__Q1.__ Given the below program:
+
 {% highlight java linenos %}
 public class Fishing {
      byte b1 = 4;
@@ -502,7 +503,7 @@ C. Line C
 D. Line D
 E. Line E
 
-__Q2.__
+__Q2.__ Given the below program:
 
 {% highlight java linenos %}
 class Mixer {
@@ -538,3 +539,33 @@ C. hi hi hi
 D. Compilation fails  
 E. hi, followed by an exception  
 F. hi hi, followed by an exception
+
+__Q3.__ Given the below program:
+
+{% highlight java linenos %}
+class Fizz {
+    int x = 5;
+
+    public static void main(String[] args) {
+        final Fizz f1 = new Fizz();
+        Fizz f2 = new Fizz();
+        Fizz f3 = FizzSwitch(f1, f2);
+        System.out.println((f1 == f3) + " " + (f1.x == f3.x));
+    }
+
+    static Fizz FizzSwitch(Fizz x, Fizz y) {
+        final Fizz z = x;
+        z.x = 6;
+        return z;
+    }
+}
+{% endhighlight %}
+
+What is the result?
+A. true true  
+B. false true  
+C. true false  
+D. false false   
+E. Compilation fails  
+F. An exception is thrown at runtime
+
