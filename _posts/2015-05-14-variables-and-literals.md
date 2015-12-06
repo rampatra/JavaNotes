@@ -459,9 +459,20 @@ to any object on the heap.
 
 #### Array Instance Variable
 
-
+An array is an object, thus, an array instance variable that's declared but not explicitly initialized will have a value
+of __`null`__, just as any other object reference instance variable. But if the array is initialized, all array elements
+are given their default values, the same default values that elements of that type get when they're instance variables. 
+In short, __Array elements are always, always, always given default values, regardless of where the array itself 
+is declared or instantiated__.
+   
+Variable Type | Default Value
+--------------|----------------
+Array (uninitialized) | `null`
+Array (initialized) | Default values of their respective types as discussed above
 
 #### Default values for Local (also called Stack or Automatic) variables (Primitive and Non-primitive):
+
+
 
 
 
