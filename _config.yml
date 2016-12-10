@@ -67,7 +67,7 @@ paginate_path: "blog/page:num"
 post_navigation: true
 
 # PLUGINS
-gems: [jekyll-picture-tag]
+gems: [jekyll-picture-tag, jekyll-paginate]
 
 # JEKYLL PICTURE TAG SETTINGS
 picture:
@@ -79,4 +79,3 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
-gems: [jekyll-paginate]
