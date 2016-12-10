@@ -3,7 +3,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://java.ramswaroop.me" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
-theme:
+theme_settings:
   # Meta
   title: Java Notes
   avatar: java-logo.png
