@@ -7,7 +7,7 @@ __Github's Jekyll__.
 It attempts to demystify some of the most misunderstood concepts in **Java** which may confound
 even many experienced java programmers.
 
-This blog may not be the best for new learners (greenhorns) but may be worth a read for others who
+This blog may not be the best for greenhorns(new learners) but may be worth a read for others, who
 can **contribute** too by simply sending in a pull request.
 
 After completing this if you want to get your hands dirty then do try to solve some problems involving various
