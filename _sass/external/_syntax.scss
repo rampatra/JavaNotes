@@ -63,7 +63,8 @@
 .il { color: #009999 } /* Literal.Number.Integer.Long */
 
 /** Custom **/
-pre table { width: inherit } /* Work-around for Rouge highlighter */ 
+pre table { width: inherit } /* Work-around for Rouge highlighter */
+pre table td { border: none } /* As Rouge highlighter use tables */
 .highlight pre { word-wrap: normal }
 .highlight pre code { white-space: pre }
 .lineno { opacity:.2; color: #cccccc;-webkit-transition: opacity .5s linear; transition: opacity .5s linear;} /* Line nos */
