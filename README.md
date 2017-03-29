@@ -14,4 +14,4 @@ After completing this if you want to get your hands dirty then do try to solve s
 [algorithms and data structures, in Java](https://github.com/ramswaroop/Algorithms-and-Data-Structures-in-Java).
 
 ### License
-GNU General Public License v2.0
+GNU General Public License v3.0
